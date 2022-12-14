@@ -1,22 +1,35 @@
 import React, { useState } from "react";
+import { useRecoilState } from "recoil";
 import Wrapper from "../../components/common/wrapper/Wrapper";
 import BigButton from "./../../components/common/button/BigButton/BigButton";
 import * as S from "./Start.style";
+import { userState } from "./../../atom/userState";
+import { useNavigate } from "react-router";
 
 const Start = () => {
   const [inputState, setInputState] = useState({ name: "", url: "" });
+  const navigate = useNavigate();
   const handleInputName = (e) => {
     setInputState({
       ...inputState,
-      name: e.target.name,
+      name: e.target.value,
     });
   };
-  const handleButton = () => {};
+  const [text, setText] = useRecoilState(userState);
+  const handleButton = () => {
+    // axios({
+    //   method: "post",
+    //   url: "/api/users/sign-in",
+    //   data: {},
+    // });
+    setText({ name: inputState.name, url: inputState.url });
+    navigate("select");
+  };
 
   const handleInputUrl = (e) => {
     setInputState({
       ...inputState,
-      name: e.target.url,
+      url: e.target.value,
     });
   };
   return (
@@ -32,7 +45,11 @@ const Start = () => {
           onChange={handleInputUrl}
         />
       </S.InputBox>
-      <BigButton handleButton={handleButton}>특별한 만남 시작하기</BigButton>
+      <S.ButtonBox>
+        <BigButton size="long" handleButton={handleButton}>
+          특별한 만남 시작하기
+        </BigButton>
+      </S.ButtonBox>
     </Wrapper>
   );
 };

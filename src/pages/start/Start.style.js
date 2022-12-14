@@ -33,4 +33,15 @@ const Input = styled.input`
 
 const MainImage = styled.img``;
 
-export { InputBox, Input, MainImage };
+const ButtonBox = styled.div`
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  top: 72rem;
+`;
+
+export { InputBox, Input, MainImage, ButtonBox };
