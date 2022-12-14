@@ -9,7 +9,8 @@ const Wrapper = styled.div`
   border: 1px solid black;
 `;
 const WrapperInner = styled.div`
-  top: 4.7rem;
+  margin-top: 4.7rem;
+  background-color: red;
   position: relative;
 `;
 

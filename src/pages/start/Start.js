@@ -17,11 +17,6 @@ const Start = () => {
   };
   const [text, setText] = useRecoilState(userState);
   const handleButton = () => {
-    // axios({
-    //   method: "post",
-    //   url: "/api/users/sign-in",
-    //   data: {},
-    // });
     setText({ name: inputState.name, url: inputState.url });
     navigate("select");
   };

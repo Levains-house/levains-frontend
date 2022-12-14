@@ -9,6 +9,7 @@ import TravelAddress from "./pages/travel/travelAddress/TravelAddress";
 import TravelItems from "./pages/travel/travelItems/TravelItems";
 import Home from "./pages/main/Main";
 import { RecoilRoot } from "recoil";
+import Items from "./pages/items/Items";
 
 const AppRouter = () => {
   return (
@@ -21,6 +22,8 @@ const AppRouter = () => {
             <Route path="/local_address" element={<LocalAddress />}></Route>
             <Route path="/travel_address" element={<TravelAddress />}></Route>
             <Route path="/local_items" element={<LocalItems />}></Route>
+            <Route path="/items" element={<Items />}></Route>
+
             <Route path="/travel_items" element={<TravelItems />}></Route>
             <Route path="/main" element={<Main />}></Route>
           </Routes>
