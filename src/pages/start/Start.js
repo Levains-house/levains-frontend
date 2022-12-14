@@ -1,13 +1,13 @@
 import React from "react";
 import Wrapper from "../../components/common/wrapper/Wrapper";
-import Button from "./../../components/common/button/Button";
+import BigButton from "./../../components/common/button/BigButton/BigButton";
+import * as S from "./Start.style";
 
 const Start = () => {
   return (
     <Wrapper>
-      <Button width="35" height="5">
-        ddd
-      </Button>
+      <S.InputName></S.InputName>
+      <S.InputUrl></S.InputUrl>
     </Wrapper>
   );
 };
