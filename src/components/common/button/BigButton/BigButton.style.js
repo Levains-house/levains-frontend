@@ -23,6 +23,8 @@ const BigButton = styled.button`
   color: ${COLOR_PALETTE.white};
   border-radius: 2rem;
   border: none;
+
+  cursor: pointer;
 `;
 
 export { BigButton };
