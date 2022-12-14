@@ -1,9 +1,8 @@
 import React from "react";
+import { Wrapper } from "../../components/common/wrapper/Wrapper.style";
 
 const Select = () => {
-    return(
-        <span>Select</span>
-    )
-}
+  return <Wrapper></Wrapper>;
+};
 
 export default Select;
