@@ -14,6 +14,7 @@
     "recoil": "^0.7.6",
     "storybook": "^6.5.14",
     "styled-component": "^2.8.0",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
