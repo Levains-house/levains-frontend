@@ -5,6 +5,8 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   margin: auto;
+  position: relative;
+  border: 1px solid black;
 `;
 const WrapperInner = styled.div`
   top: 4.7rem;
