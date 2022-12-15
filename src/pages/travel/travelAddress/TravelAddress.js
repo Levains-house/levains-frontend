@@ -25,17 +25,18 @@ const TravelAddress = () => {
     return sum / len;
   };
 
-  var centerPos = new kakao.maps.LatLng(33.450701, 126.570667);
+  var centerPos = new kakao.maps.LatLng(33.430701, 126.570667);
+
   useEffect(() => {
     const container = document.getElementById("myMap");
-    if (LatList.length === 0) {
-      centerPos = new kakao.maps.LatLng(33.450701, 126.570667);
-    } else {
-      centerPos = new kakao.maps.LatLng(getAVG(LatList), getAVG(LongList));
-    }
+    // if (LatList.length === 0) {
+    //   centerPos = new kakao.maps.LatLng(33.450701, 126.570667);
+    // } else {
+    //   centerPos = new kakao.maps.LatLng(getAVG(LatList), getAVG(LongList));
+    // }
     const options = {
       center: centerPos,
-      level: 3,
+      level: 10,
     };
     const map = new kakao.maps.Map(container, options);
 
