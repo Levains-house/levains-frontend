@@ -16,11 +16,8 @@ const Items = () => {
   const [whoseToggleState, setWhoseToggleState] = useState("my");
   const [myCnt, setMyCnt] = useState(1);
   const [yourCnt, setYourCnt] = useState(1);
-  // "wsl"
 
   const navigate = useNavigate();
-
-  const handleAddButton = () => {};
 
   const handleNextButton = () => {
     navigate("/main");
@@ -57,23 +54,8 @@ const Items = () => {
             </S.WhoseToggleButton>
           </S.WhoseToggleBox>
           {/* 컴포넌트 분리 */}
-          {whoseToggleState === "my" &&
-            _.times(myCnt, _.constant(0)).map((it, i) => <MyItem key={i} />)}
-          {whoseToggleState === "your" &&
-            _.times(yourCnt, _.constant(0)).map((it) => <YourItem />)}
-          <S.AddButtonWrapper>
-            <S.AddButton
-              onClick={() => {
-                if (whoseToggleState === "my") {
-                  setMyCnt(myCnt + 1);
-                } else {
-                  setYourCnt(yourCnt + 1);
-                }
-              }}
-            >
-              +
-            </S.AddButton>
-          </S.AddButtonWrapper>
+          {whoseToggleState === "my" && <MyItem />}
+          {whoseToggleState === "your" && <YourItem />}
         </S.WrapperInner>
       </Wrapper>
       <BigButton size="long" handleButton={handleNextButton}>

@@ -4,7 +4,7 @@ export const MyRebangList = styled.section`
   padding: 2rem;
   height: 50rem;
   position: relative;
-  top: 15rem;
+  top: 18rem;
 `;
 
 export const MyRebangItem = styled.div`
@@ -27,16 +27,16 @@ export const MyRebangStatusCircle = styled.div`
 
   border-radius: 50%;
   background-color: ${(props) =>
-    props.status === "before" ? "#E1E1E8" : "#ffc000"};
+    props.status === "BEFORE" ? "#E1E1E8" : "#ffc000"};
   margin: 0 1.5rem;
 `;
 export const MyRebangStatusText = styled.p`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: ${(props) => (props.status === "before" ? "#FFC000" : "white")};
+  color: ${(props) => (props.status === "BEFORE" ? "#FFC000" : "white")};
   background-color: ${(props) =>
-    props.status === "before" ? "#FFFFFF" : "#FFC000"};
+    props.status === "BEFORE" ? "#FFFFFF" : "#FFC000"};
   border: 1px solid #ffc000;
   font-weight: 500;
   font-size: 1.4rem;

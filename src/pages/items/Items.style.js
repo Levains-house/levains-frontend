@@ -8,7 +8,6 @@ export const WrapperInner = styled.div`
 
 export const BackImage = styled.img`
   height: 5rem;
-
   display: flex;
   align-items: center;
   font-size: 2rem;
@@ -43,7 +42,6 @@ export const WhoseToggleButton = styled.div`
   width: 13rem;
   height: 4.7rem;
   background-color: ${(props) => (props.isOn ? "#ffd058" : "white")};
-
   color: ${(props) => (props.isOn ? "white" : "#A9ABB8")};
   border-radius: 2rem;
   font-size: 1.6rem;
