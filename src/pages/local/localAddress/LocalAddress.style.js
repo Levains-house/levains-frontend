@@ -150,7 +150,6 @@ export const headerButton = styled.button`
     top: 6.4rem;
     left:1.7rem;
     background:white;
-    border:5px;
 `
 export const headerImg = styled.img`
 height: 1.481rem;

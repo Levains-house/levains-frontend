@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   margin: auto;
   position: relative;
   border: 1px solid black;
+  background-color:#FAF9F9;
 `;
 const WrapperInner = styled.div`
   margin-top: 4.7rem;
