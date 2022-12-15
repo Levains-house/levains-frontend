@@ -141,7 +141,7 @@ export const MyItemsImageLabel = styled.label`
   background-color: white;
   border-radius: 0.5rem;
   font-size: 1.2rem;
-  padding: 0.2rem;
+  padding: 1rem;
 `;
 
 export const MyItemsname = styled.input`

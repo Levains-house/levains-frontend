@@ -9,11 +9,14 @@ import Mypage from "../myPage/Mypage";
 import logoImage from "../../assets/images/logo.svg";
 import Modal from "./Modals/Modal";
 import axios from "axios";
+import add from "../../assets/images/add.png";
+import { useNavigate } from "react-router";
 
 const Main = () => {
   const [isHome, Toggle] = useState(true);
   const [categoryItem, setCategoryItem] = useState([]);
   const [experienceItem, setExperienceItem] = useState([]);
+  const naviagte = useNavigate();
   const getHomeData = async () => {
     const response = await axios({
       method: "get",
@@ -59,7 +62,12 @@ const Main = () => {
       )}
       <S.bottomNavContainer></S.bottomNavContainer>
       <S.logoButton>
-        <S.logoImg src={logoImage}></S.logoImg>
+        <S.logoImg
+          src={add}
+          onClick={() => {
+            naviagte("/items");
+          }}
+        />
       </S.logoButton>
       <S.homeButton
         onClick={() => {

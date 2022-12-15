@@ -23,11 +23,30 @@ const Mypage = () => {
   useEffect(() => {
     getMyRebang();
   }, []);
+  console.log(List);
+  const handleItem = async (e) => {
+    const response = await axios({
+      method: "put",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/status",
+      headers: {
+        authorization: localStorage.getItem("accesstoken"),
+      },
+      data: {
+        item_id: e.target.id,
+        trade_status: "AFTER",
+      },
+    });
+    await getMyRebang();
+  };
   return (
     <>
       <S.MyRebangList>
         {List.map((MyRebang) => (
-          <S.MyRebangItem key={MyRebang.item_id} id={MyRebang.item_id}>
+          <S.MyRebangItem
+            key={MyRebang.item_id}
+            id={MyRebang.item_id}
+            onClick={handleItem}
+          >
             <S.MyRebangStatus>
               <S.MyRebangStatusCircle status={MyRebang.trade_status} />
               <S.MyRebangStatusText status={MyRebang.trade_status}>
