@@ -3,10 +3,10 @@ import { BACKGROUND_PALETTE } from "./../../constants/palette";
 
 const InputBox = styled.div`
   position: absolute;
-  top: 30rem;
+  top: 39.7rem;
   left: 0;
   right: 0;
-  margin: auto;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -31,7 +31,15 @@ const Input = styled.input`
   margin-top: 1rem;
 `;
 
-const MainImage = styled.img``;
+const MainImage = styled.img`
+  display: block;
+  position: absolute;
+  left: 13.6rem;
+
+  margin: auto;
+  top: 15rem;
+  width: 16.3rem;
+`;
 
 const ButtonBox = styled.div`
   left: 0;
@@ -41,7 +49,19 @@ const ButtonBox = styled.div`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  top: 72rem;
+  bottom: 2rem;
+`;
+
+export const MainTitle = styled.div`
+  position: absolute;
+  top: 36rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #ffc000;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
 `;
 
 export { InputBox, Input, MainImage, ButtonBox };

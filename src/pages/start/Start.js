@@ -5,6 +5,7 @@ import BigButton from "./../../components/common/button/BigButton/BigButton";
 import * as S from "./Start.style";
 import { userState } from "./../../atom/userState";
 import { useNavigate } from "react-router";
+import mainLogo from "../../assets/mainLogo.svg";
 
 const Start = () => {
   const [inputState, setInputState] = useState({ name: "", url: "" });
@@ -29,7 +30,8 @@ const Start = () => {
   };
   return (
     <Wrapper>
-      <S.MainImage />
+      <S.MainImage src={mainLogo} />
+      <S.MainTitle>멘도롱주멍멍</S.MainTitle>
       <S.InputBox>
         <S.Input
           placeholder="닉네임을 입력해주세요"
