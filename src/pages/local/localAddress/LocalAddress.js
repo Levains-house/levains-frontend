@@ -7,6 +7,7 @@ import searchImage from "../../../assets/images/여행객/Union.svg";
 import { useNavigate } from "react-router";
 import SetLatLong from "../../../components/SetLatLong";
 import axios from "axios";
+import image from "../../../assets/images/localAddress.svg";
 
 const LocalAddress = () => {
   const [modalState, setModalState] = useState(false);
@@ -52,13 +53,15 @@ const LocalAddress = () => {
 
   return (
     <Wrapper>
-      <S.headerButton>
-        <S.headerImg>&#60;</S.headerImg>
-      </S.headerButton>
       <S.textHeader>
-        혜연님,<br></br>만남을 위한 두번째 단계 입니다.
+        <S.a>혜연님,</S.a>
+
+        <S.a>
+          만남을 위한 <S.Color>두번째</S.Color> 단계 입니다.
+        </S.a>
       </S.textHeader>
-      <S.placeText>거주지를 입력해주세요.</S.placeText>
+      <S.placeText>해당하는 곳을 선택해주세요</S.placeText>
+      <S.Image src={image} />
       <S.searchBox></S.searchBox>
       <S.ddot></S.ddot>
       <S.roadText>
@@ -87,8 +90,7 @@ const LocalAddress = () => {
       ></DaumPostcode>
       <S.nextButton
         onClick={() => {
-          // console.log(Lat,Long);
-          navigate("./items");
+          navigate("/items");
         }}
       >
         다음으로

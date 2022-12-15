@@ -10,6 +10,7 @@ import api from "../../api/api";
 import image from "./sample.png";
 import MyItem from "./MyItem";
 import YourItem from "./YourItem";
+import backImage from "../../assets/images/back.svg";
 
 const Items = () => {
   const [whoseToggleState, setWhoseToggleState] = useState("my");
@@ -29,12 +30,13 @@ const Items = () => {
     <>
       <Wrapper>
         <S.WrapperInner>
-          <S.Back>&#60;</S.Back>
+          {/* <S.Back>&#60;</S.Back> */}
+          <S.BackImage src={backImage} />
           <S.Title>
             유나님, <br />
-            만남을 위한 <S.Color>마지막 단계</S.Color> 입니다.
+            벌써 <S.Color>마지막</S.Color>단계에요!
           </S.Title>
-          <S.Subtitle>물건을 등록해주세요.</S.Subtitle>
+          <S.Subtitle>교환하고 싶은 물건을 등록해주세요</S.Subtitle>
 
           <S.WhoseToggleBox>
             <S.WhoseToggleButton

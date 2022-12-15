@@ -1,4 +1,3 @@
-import { typeImplementation } from "@testing-library/user-event/dist/type/typeImplementation";
 import styled from "styled-components";
 
 export const backHeader = styled.img`
@@ -8,7 +7,22 @@ export const backHeader = styled.img`
   top: 6.4rem;
   left: 1.7rem;
   background: white;
-  background-color: REd;
+`;
+export const Color = styled.span`
+  color: #78a484;
+`;
+
+export const a = styled.div`
+  width: 100%;
+`;
+
+export const Image = styled.img`
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 28rem;
+  width: 8.8rem;
 `;
 
 export const nextButton = styled.button`
@@ -48,6 +62,7 @@ export const textHeader = styled.text`
   line-height: 2.9rem;
   display: flex;
   align-items: center;
+  flex-direction: column;
 
   color: #000000;
 `;
