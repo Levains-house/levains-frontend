@@ -1,34 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import * as S from "./MyPage.style";
+import axios from "axios";
 
 const rebangStatus = {
-  before: "교환 전",
-  after: "교환 완료",
+  BEFORE: "교환 전",
+  AFTER: "교환 완료",
 };
 
-const DUMMYLIST = [
-  {
-    item_id: 0,
-    name: "스웨터 상하의 세트",
-    trade_status: "after",
-  },
-  {
-    item_id: 1,
-    name: "제주 귤 농장 체험",
-    trade_status: "before",
-  },
-  {
-    item_id: 2,
-    name: "브라운 어그 부츠",
-    trade_status: "before",
-  },
-];
-
 const Mypage = () => {
+  const [List, setList] = useState([]);
+  const getMyRebang = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/profiles",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        authorization: localStorage.getItem("accesstoken"),
+      },
+    });
+    setList(response.data.items);
+  };
+  useEffect(() => {
+    getMyRebang();
+  }, []);
   return (
     <>
       <S.MyRebangList>
-        {DUMMYLIST.map((MyRebang) => (
+        {List.map((MyRebang) => (
           <S.MyRebangItem key={MyRebang.item_id} id={MyRebang.item_id}>
             <S.MyRebangStatus>
               <S.MyRebangStatusCircle status={MyRebang.trade_status} />

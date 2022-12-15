@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import _ from "lodash";
 import api from "../../api/api";
+import image from "./sample.png";
 
 const MYOPTIONS = [
   { id: 0, name: "카테고리", value: "default" },
@@ -47,12 +48,7 @@ const Items = () => {
   const handleMyButton = async () => {
     // 파일 전송(내 아이템)
     const formData = new FormData();
-    console.log(
-      myImageState[0],
-      categoryState,
-      myDescriptionState,
-      yourCategoryState
-    );
+
     formData.append("image", myImageState[0]);
     formData.append("name", myNameState);
     formData.append("description", myDescriptionState);
@@ -70,18 +66,27 @@ const Items = () => {
     });
     console.log(response);
   };
-  const handleYourButton = () => {
-    api.post({
-      url: "/api/items/register",
-      data: {
-        username: myImageState,
-        name: yourNameState,
-        descriptoin: yourDescriptionState,
-        // category: categoryState,
-        item_type: "OPPONENT",
+  const handleYourButton = async () => {
+    // 파일 전송(내 아이템)
+    const formData = new FormData();
+    console.log(yourNameState, yourDescriptionState, yourCategoryState);
+
+    formData.append("name", yourNameState);
+    formData.append("description", yourDescriptionState);
+    formData.append("category", yourCategoryState);
+    formData.append("purpose", "WANT");
+    const response = await axios({
+      method: "post",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        authorization: localStorage.getItem("accesstoken"),
       },
+      data: formData,
     });
+    console.log(response);
   };
+
   const handleCategory = (e) => {
     setCategoryState(e.target.value);
   };
@@ -211,7 +216,7 @@ const Items = () => {
                       </S.MyItemsOption>
                     ))}
                   </S.MyItemsCatagory>
-                  <S.MyItemsButton onClick={handleMyButton}>
+                  <S.MyItemsButton onClick={handleYourButton}>
                     등록
                   </S.MyItemsButton>
                 </S.YourItemsCatagoryBox>
