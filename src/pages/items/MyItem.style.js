@@ -36,6 +36,44 @@ export const WhoseToggleBox = styled.div`
   padding: 0.2rem;
 `;
 
+export const ToggleBox = styled.div`
+  width: 33rem;
+  height: 11.6rem;
+  border: 1px solid #a9abb8;
+  border-radius: 2rem;
+  position: relative;
+  font-size: 1.4rem;
+  font-weight: 500;
+`;
+export const ToggleName = styled.div`
+  position: absolute;
+  left: 1.5rem;
+  top: 2rem;
+  color: #3e404c;
+  font-weight: 700;
+`;
+export const ToggleCategory = styled.div`
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  /* color: #ffffff; */
+  background-color: #78a484;
+  border-radius: 1rem;
+  padding: 0.5rem 2rem;
+  color: white;
+`;
+export const ToggleDescription = styled.div`
+  position: absolute;
+  left: 1.5rem;
+  margin: auto;
+  bottom: 2.5rem;
+  color: #a9abb8;
+  padding-top: 1rem;
+  box-sizing: border-box;
+  /* background-color: red; */
+  width: 90%;
+  border-top: 1px solid #a9abb8;
+`;
 export const WhoseToggleButton = styled.div`
   width: 13rem;
   height: 4.7rem;

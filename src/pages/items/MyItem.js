@@ -19,8 +19,9 @@ const MyItem = () => {
   const [myDescriptionState, setMyDescriptionState] = useState("");
   const [srcState, setSrcState] = useState("");
   const [imageToggle, setImageToggle] = useState(false);
+  const [data, setData] = useState({});
+  const [toggle, setToggle] = useState(true);
 
-  console.log(myNameState);
   const encodeFileToBase64 = (fileBlob) => {
     const reader = new FileReader();
     reader.readAsDataURL(fileBlob);
@@ -33,6 +34,7 @@ const MyItem = () => {
   };
   const handleCategory = (e) => {
     setCategoryState(e.target.value);
+    setImageToggle(false);
   };
   const handleMyButton = async () => {
     // 파일 전송(내 아이템)
@@ -44,81 +46,98 @@ const MyItem = () => {
     formData.append("category", categoryState);
     formData.append("purpose", "SHARE");
     console.log(localStorage.getItem("accesstoken"));
-    const response = await axios({
-      method: "post",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
-      headers: {
-        "Content-Type": "multipart/form-data",
-        authorization: localStorage.getItem("accesstoken"),
-      },
-      data: formData,
+    // const response = await axios({
+    //   method: "post",
+    //   url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
+    //   headers: {
+    //     "Content-Type": "multipart/form-data",
+    //     authorization: localStorage.getItem("accesstoken"),
+    //   },
+    //   data: formData,
+    // });
+    // console.log(response);
+    setToggle(false);
+    setData({
+      name: myNameState,
+      description: myDescriptionState,
+      category: MYOPTIONS.filter((it) => it.value === categoryState)[0].name,
     });
-    console.log(response);
   };
 
   return (
     <S.MyItemsBox>
-      <S.MyItemsBoxAdd>
-        <S.MyItemsImageBox src={srcState}>
-          <S.MyItemsToggle
-            onClick={() => {
-              setImageToggle(!imageToggle);
-            }}
-          >
-            . . .
-          </S.MyItemsToggle>
+      {toggle ? (
+        <S.MyItemsBoxAdd>
+          <S.MyItemsImageBox src={srcState}>
+            <S.MyItemsToggle
+              onClick={() => {
+                setImageToggle(!imageToggle);
+              }}
+            >
+              . . .
+            </S.MyItemsToggle>
 
-          {imageToggle && (
-            <div>
-              <S.MyItemsImageInput
-                type="file"
-                onChange={(e) => {
-                  setMyImageState(e.target.files);
-                  const reader = new FileReader();
-                  reader.readAsDataURL(e.target.files[0]);
-                  return new Promise((resolve) => {
-                    reader.onload = () => {
-                      encodeFileToBase64(e.target.files[0]);
-                      resolve();
-                    };
-                  });
-                }}
-                accept="img/*"
-                id="image"
-              />
-              <S.MyItemsImageLabel htmlFor="image">
-                이미지 넣기
-              </S.MyItemsImageLabel>
-            </div>
-          )}
-        </S.MyItemsImageBox>
-        <S.MyItemsname
-          onChange={(e) => {
-            setMyNameState(e.target.value);
-          }}
-          placeholder="상품명을 입력해주세요"
-        />
-        <S.MyItemsDescription
-          onChange={(e) => {
-            setMyDescriptionState(e.target.value);
-          }}
-          placeholder="상세설명을 입력해주세요"
-        />
-        <S.MyItemsCatagoryBox>
-          <S.MyItemsCatagory onChange={handleCategory}>
-            {MYOPTIONS.map((option) => (
-              <S.MyItemsOption
-                key={option.id}
-                value={option.value}
-                defaultValue={option.value === "default"}
-              >
-                {option.name}
-              </S.MyItemsOption>
-            ))}
-          </S.MyItemsCatagory>
-          <S.MyItemsButton onClick={handleMyButton}>등록</S.MyItemsButton>
-        </S.MyItemsCatagoryBox>
-      </S.MyItemsBoxAdd>
+            {imageToggle && (
+              <div>
+                <S.MyItemsImageInput
+                  type="file"
+                  onChange={(e) => {
+                    setMyImageState(e.target.files);
+                    const reader = new FileReader();
+                    reader.readAsDataURL(e.target.files[0]);
+                    return new Promise((resolve) => {
+                      reader.onload = () => {
+                        encodeFileToBase64(e.target.files[0]);
+                        resolve();
+                      };
+                    });
+                  }}
+                  accept="img/*"
+                  id="image"
+                />
+                <S.MyItemsImageLabel htmlFor="image">
+                  이미지 넣기
+                </S.MyItemsImageLabel>
+              </div>
+            )}
+          </S.MyItemsImageBox>
+          <S.MyItemsname
+            onChange={(e) => {
+              setMyNameState(e.target.value);
+            }}
+            placeholder="상품명을 입력해주세요"
+          />
+          <S.MyItemsDescription
+            onChange={(e) => {
+              setMyDescriptionState(e.target.value);
+            }}
+            placeholder="상세설명을 입력해주세요"
+          />
+          <S.MyItemsCatagoryBox>
+            <S.MyItemsCatagory onChange={handleCategory}>
+              {MYOPTIONS.map((option) => (
+                <S.MyItemsOption
+                  key={option.id}
+                  value={option.value}
+                  defaultValue={option.value === "default"}
+                >
+                  {option.name}
+                </S.MyItemsOption>
+              ))}
+            </S.MyItemsCatagory>
+            <S.MyItemsButton onClick={handleMyButton}>등록</S.MyItemsButton>
+          </S.MyItemsCatagoryBox>
+        </S.MyItemsBoxAdd>
+      ) : (
+        <S.MyItemsBoxAdd>
+          {" "}
+          <S.ToggleBox>
+            <S.ToggleName>{data.name}</S.ToggleName>
+            <S.ToggleCategory>{data.category}</S.ToggleCategory>
+            <S.ToggleDescription>{data.description}</S.ToggleDescription>
+          </S.ToggleBox>
+        </S.MyItemsBoxAdd>
+      )}
     </S.MyItemsBox>
   );
 };
