@@ -142,15 +142,18 @@ export const glassImg = styled.img`
   width: 1.534rem;
 `;
 
-export const headerButton = styled.button`
+export const headerButton = styled.div`
   position: absolute;
   width: 1.6rem;
   height: 0.941rem;
   top: 6.4rem;
   left: 1.7rem;
-  background: white;
+  /* background: white; */
 `;
-export const headerImg = styled.img`
+export const headerImg = styled.div`
   height: 1.481rem;
   width: 1.534rem;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 700;
 `;

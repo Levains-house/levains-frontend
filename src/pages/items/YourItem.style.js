@@ -34,7 +34,6 @@ export const WhoseToggleBox = styled.div`
   border-radius: 2rem;
   margin: 1.6rem auto 1rem auto;
   padding: 0.2rem;
-  background-color: white;
 `;
 
 export const WhoseToggleButton = styled.div`
@@ -89,7 +88,6 @@ export const YourItemsBoxAdd = styled.div`
   align-items: center;
   padding: 1rem;
   position: relative;
-  border: 1px solid #cdced6;
   width: 35rem;
   /* height: 22.6rem; */
   border-radius: 2rem;
@@ -99,7 +97,7 @@ export const YourItemsBoxAdd = styled.div`
 export const YourItemsBoxInner = styled.div``;
 
 export const MyItemsImageBox = styled.div`
-  width: 35rem;
+  width: 33rem;
   height: 25.9rem;
   display: block;
   border-radius: 2rem;
@@ -141,10 +139,12 @@ export const MyItemsImageLabel = styled.label`
   padding: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
+  font-size: 1.2rem;
+  padding: 0.2rem;
 `;
 
 export const MyItemsname = styled.input`
-  width: 34.2rem;
+  width: 33rem;
   height: 3rem;
   /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
@@ -164,7 +164,7 @@ export const MyItemsname = styled.input`
 `;
 export const YourItemsname = styled.input`
   width: 31.2rem;
-  height: 3rem;
+  height: 4.5rem;
   border-radius: 1rem;
   padding: 2rem;
   box-sizing: border-box;
@@ -177,7 +177,6 @@ export const YourItemsname = styled.input`
   line-height: 20px;
   display: flex;
   align-items: center;
-  margin-top: 1rem;
 `;
 export const YourItemsDescription = styled.input`
   width: 31.2rem;
@@ -200,8 +199,8 @@ export const YourItemsDescription = styled.input`
 `;
 
 export const MyItemsDescription = styled.input`
-  width: 34.2rem;
-  height: 3rem;
+  width: 33rem;
+  height: 4.5rem;
   /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
   padding: 2rem;
@@ -223,7 +222,7 @@ export const MyItemsCatagoryBox = styled.div`
   position: relative;
   align-items: center;
   height: 6rem;
-  width: 34.2rem;
+  width: 33rem;
 `;
 
 export const YourItemsCatagoryBox = styled.div`
@@ -262,8 +261,8 @@ export const AddButton = styled.div`
 export const MyItemsCatagory = styled.select`
   position: absolute;
   left: 0;
-  width: 10rem;
-  height: 4rem;
+
+  height: 4.5rem;
   /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
   padding: 2rem;
@@ -282,19 +281,23 @@ export const MyItemsCatagory = styled.select`
   margin-top: 1rem;
 
   padding: 0 1rem;
+  width: 12rem;
 `;
 export const MyItemsButton = styled.button`
   position: absolute;
 
   right: 0;
-  width: 12.6rem;
-  height: 4rem;
+
+  height: 4.5rem;
   border-radius: 2rem;
   border: 1px solid #ffd058;
   /* color: #ffd058; */
   font-size: 1.4rem;
   background-color: white;
   cursor: pointer;
+  display: block;
+  border-radius: 1.5rem;
+  width: 12rem;
 `;
 export const MyItemsOption = styled.option``;
 

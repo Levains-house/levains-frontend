@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Wrapper from "../../components/common/wrapper/Wrapper";
 import * as S from "./Main.style";
 import headerImage from "../../assets/images/여행객/Vector.svg";
@@ -8,9 +8,29 @@ import Home from "../home/Home";
 import Mypage from "../myPage/Mypage";
 import logoImage from "../../assets/images/logo.svg";
 import Modal from "./Modals/Modal";
+import axios from "axios";
 
 const Main = () => {
   const [isHome, Toggle] = useState(true);
+  const [categoryItem, setCategoryItem] = useState([]);
+  const [experienceItem, setExperienceItem] = useState([]);
+  const getHomeData = async () => {
+    const response = await axios({
+      method: "get",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users",
+      headers: {
+        authorization: localStorage.getItem("accesstoken"),
+      },
+    });
+    setCategoryItem(response.data.category_items);
+    setExperienceItem(response.data.experience_items);
+    console.log(response.data);
+  };
+
+  useEffect(() => {
+    getHomeData();
+  }, []);
+  console.log(categoryItem, experienceItem);
   return (
     <Wrapper>
       <S.headerWhiteBox></S.headerWhiteBox>

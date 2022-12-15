@@ -5,17 +5,37 @@ import DaumPostcode from "react-daum-postcode";
 import headerImage from "../../../assets/images/여행객/Vector.svg";
 import searchImage from "../../../assets/images/여행객/Union.svg";
 import { useNavigate } from "react-router";
-import SetLatLong from "../../../components/SetLatLong"
-import axios from "axios"
+import SetLatLong from "../../../components/SetLatLong";
+import axios from "axios";
 
 const LocalAddress = () => {
   const [modalState, setModalState] = useState(false);
   const [inputAddressValue, setInputAddressValue] = useState("");
   const navigate = useNavigate();
 
-  const [Lat, setLat] = useState('');   // 경도
-  const [Long, setLong] = useState(''); // 위도
+  const [Lat, setLat] = useState(""); // 경도
+  const [Long, setLong] = useState(""); // 위도
+  console.log(Lat, Long);
 
+  const handleNextButton = async () => {
+    const response = await axios({
+      method: "post",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
+      headers: {
+        authorization: localStorage.getItem("accesstoken"),
+      },
+      data: {
+        address: [
+          {
+            latitude: Long,
+            longitude: Lat,
+          },
+        ],
+      },
+    });
+    console.log(response);
+    navigate("/items");
+  };
   const [isGet, setGet] = useState(false);
   const postCodeStyle = {
     position: "absolute",
@@ -31,34 +51,10 @@ const LocalAddress = () => {
     setGet(true);
   }; // onCompletePost 함수
 
-  const sendData = async() => {
-    const headers = {
-        'Content-Type' : 'application/json',
-        'Authorization' : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiSldUIiwidXNlcl9pZCI6OCwidXNlcm5hbWUiOiJ0MTIzIiwia2FrYW9fdGFsa19jaGF0dGluZ191cmwiOiJ0ZXN0ZXN0Iiwicm9sZSI6IlRSQVZFTCIsImlhdCI6MTY3MTEwMjUwMCwiZXhwIjoxNjczNjk0NTAwLCJpc3MiOiJhZG1pbiJ9.-GspI417TwHFee5oEITknNgOHBPM9J5jTM2-1rwneXA"
-    }
-    try{
-        const res = await axios.post(
-            "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
-            {
-                "address":[
-                    {
-                        "latitude": Long,
-                        "longitude": Lat
-                    }
-                ]
-            },{
-                headers:headers
-            }
-        )
-        console.log(res);
-    } catch(e){
-        console.log(e);
-    }
-  }
   return (
     <Wrapper>
       <S.headerButton>
-        <S.headerImg src={headerImage}></S.headerImg>
+        <S.headerImg>&#60;</S.headerImg>
       </S.headerButton>
       <S.textHeader>
         혜연님,<br></br>만남을 위한 두번째 단계 입니다.
@@ -69,7 +65,15 @@ const LocalAddress = () => {
       <S.roadText>
         {isGet ? inputAddressValue : "도로명주소 검색하기"}
       </S.roadText>
-      {isGet ? <SetLatLong RoadAddr={inputAddressValue} setLat={setLat} setLong={setLong}></SetLatLong> : <></>}
+      {isGet ? (
+        <SetLatLong
+          RoadAddr={inputAddressValue}
+          setLat={setLat}
+          setLong={setLong}
+        ></SetLatLong>
+      ) : (
+        <></>
+      )}
       <S.searchButton>
         <S.glassImg
           src={searchImage}
@@ -84,9 +88,8 @@ const LocalAddress = () => {
       ></DaumPostcode>
       <S.nextButton
         onClick={() => {
-            sendData();
-            console.log(Long, Lat);
-            navigate("/items");
+          // console.log(Lat,Long);
+          navigate("./items");
         }}
       >
         다음으로
