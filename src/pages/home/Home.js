@@ -23,8 +23,9 @@ const Home = () => {
         const response = await axios.get(
           "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users?range="+String(range),{
           headers: {
-              'Authorization': "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiSldUIiwidXNlcl9pZCI6OCwidXNlcm5hbWUiOiJ0MTIzIiwia2FrYW9fdGFsa19jaGF0dGluZ191cmwiOiJ0ZXN0ZXN0Iiwicm9sZSI6IlRSQVZFTCIsImlhdCI6MTY3MTEwMjUwMCwiZXhwIjoxNjczNjk0NTAwLCJpc3MiOiJhZG1pbiJ9.-GspI417TwHFee5oEITknNgOHBPM9J5jTM2-1rwneXA"
-          },}
+              'Authorization': localStorage.getItem('accesstoken')          
+            },
+          }
         );
         setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
         console.log(response);
