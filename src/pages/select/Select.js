@@ -43,7 +43,7 @@ const Select = () => {
       data: {
         username: text.name,
         kakao_talk_chatting_url: text.url,
-        role: "travel",
+        role: "TRAVEL",
       },
     });
     localStorage.setItem("accesstoken", response.data.access_token);
