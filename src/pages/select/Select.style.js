@@ -5,13 +5,16 @@ const WrapperInner = styled.div`
   margin-top: 5rem;
 `;
 const TitleBox = styled.div``;
-const Title = styled.p`
+const Title = styled.div`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
   font-size: 2rem;
   display: flex;
   align-items: center;
+`;
+export const Color = styled.span`
+  color: #86c3c7;
 `;
 const SubTitle = styled.p`
   font-family: "Inter";
@@ -50,7 +53,9 @@ export const SelectRightBox = styled.div`
   text-align: center;
 `;
 const SelectRight = styled.div``;
-const SelectIcon = styled.p``;
+const SelectIcon = styled.img`
+  width: 3rem;
+`;
 const SelectText = styled.p`
   color: white;
   background-color: #ffdb66;
