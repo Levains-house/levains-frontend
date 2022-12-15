@@ -257,3 +257,67 @@ export const itemsContainer = styled.div`
   padding-left:1rem;
   padding-bottom:1rem;
 `
+
+
+export const placeBox = styled.div`
+    background: #FFFFFF;
+    /* gray scale/gray1 */
+
+    border: 0.1rem solid #E1E1E8;
+    border-radius: 2rem;
+    width:35rem;
+    height:6.7rem;
+    margin-left:2rem;
+    margin-bottom:0.8rem;
+    display:flex;
+    overflow:auto;
+`
+
+export const placeName = styled.text`
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 400;
+font-size: 1.6rem;
+line-height: 2.3rem;
+display: flex;
+align-items: center;
+margin-left: 1.6rem;
+margin-top: 1.3rem;
+`
+
+export const addrText = styled.text`
+font-family: 'Noto Sans KR';
+font-style: normal;
+font-weight: 400;
+font-size: 1.4rem;
+line-height: 2rem;
+display: flex;
+align-items: center;
+width:25rem;
+
+/* gray scale/gray2 */
+
+color: #CDCED6;
+margin-left:1.6rem;
+margin-top:0.1rem;
+
+`
+
+export const styledLi = styled.li`
+    list-style:none;
+`
+
+export const placeIcon = styled.img`
+    width: 1.458rem;
+    height: 2.083rem;
+    margin-left: 1.936rem;
+    margin-top:2.3rem;
+`
+
+export const resHolder = styled.div`
+    position: absolute;
+    top: 58.4rem;
+    width: 39rem;
+    height: 20.1rem;
+    overflow-y:scroll;
+  `
