@@ -85,7 +85,7 @@ left: 4.6rem;
 top: 14.4rem;
 height: 21rem;
 width: 29.7rem;
-
+object-fit:cover;
 background: #D9D9D9;
 border-radius: 2rem;
 `
