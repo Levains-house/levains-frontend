@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const WrapperInner = styled.div`
   padding: 0 1.5rem;
-  margin-top: 5rem;
+  margin-top: 8rem;
 `;
 const TitleBox = styled.div``;
 const Title = styled.div`
@@ -24,8 +24,8 @@ const SubTitle = styled.p`
   font-size: 1.6rem;
   display: flex;
   align-items: center;
-
   color: #3e404c;
+  line-height: 0;
 `;
 const SelectBox = styled.div`
   display: flex;

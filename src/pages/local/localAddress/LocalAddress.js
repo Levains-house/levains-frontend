@@ -15,7 +15,6 @@ const LocalAddress = () => {
 
   const [Lat, setLat] = useState(""); // 경도
   const [Long, setLong] = useState(""); // 위도
-  console.log(Lat, Long);
 
   const handleNextButton = async () => {
     const response = await axios({
@@ -80,7 +79,7 @@ const LocalAddress = () => {
           onClick={() => {
             setModalState(true);
           }}
-        ></S.glassImg>
+        />
       </S.searchButton>
       <DaumPostcode
         style={postCodeStyle}

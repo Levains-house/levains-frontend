@@ -26,8 +26,14 @@ const Select = () => {
         role: "LOCAL",
       },
     });
+
+    if (response.status === 201) {
+      navigate("/local_address");
+    } else {
+      navigate("/main");
+    }
     localStorage.setItem("accesstoken", response.data.access_token);
-    navigate("/local_address");
+    //
   };
 
   const handleTravel = async () => {
@@ -41,7 +47,11 @@ const Select = () => {
       },
     });
     localStorage.setItem("accesstoken", response.data.access_token);
-    navigate("/travel_address");
+    if (response.status === 201) {
+      navigate("/travel_address");
+    } else {
+      navigate("/main");
+    }
   };
   return (
     <Wrapper>
