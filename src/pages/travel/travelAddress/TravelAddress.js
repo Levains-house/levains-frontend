@@ -25,7 +25,7 @@ const TravelAddress = () => {
     return sum / len;
   };
 
-  var centerPos = new kakao.maps.LatLng(33.430701, 126.570667);
+  var centerPos = new kakao.maps.LatLng(33.400701, 126.570667);
 
   useEffect(() => {
     const container = document.getElementById("myMap");
@@ -77,7 +77,7 @@ const TravelAddress = () => {
       <S.headerButton>
         <S.headerImg src={headerImage}></S.headerImg>
       </S.headerButton>
-      <S.textHeader1>유나님,</S.textHeader1>
+      <S.textHeader1>{localStorage.getItem("username")}님,</S.textHeader1>
       <S.textHeader2>
         만남을 위한&nbsp;<text style={{ color: "#86C3C7" }}>두번째 단계</text>
         &nbsp;입니다.
