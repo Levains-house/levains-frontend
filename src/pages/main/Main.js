@@ -42,7 +42,7 @@ const Main = () => {
       </S.headerButton>
       {isHome ? (
         <>
-          <S.headerText>혜연님,</S.headerText>
+          <S.headerText>{localStorage.getItem("username")}님,</S.headerText>
           <S.headerText2>
             제주에서&nbsp;
             <text style={{ color: "#86C3C7" }}>특별한 만남을</text>
@@ -52,9 +52,9 @@ const Main = () => {
         </>
       ) : (
         <>
-          <S.headerText>혜연님,</S.headerText>
+          <S.headerText>{localStorage.getItem("username")}님,</S.headerText>
           <S.headerText2>
-            <text style={{ color: "#86C3C7" }}>나의 르방</text>
+            <text style={{ color: "#86C3C7" }}>나의 주멍</text>
             &nbsp;확인해보세요!
           </S.headerText2>
           <Mypage />
@@ -84,7 +84,7 @@ const Main = () => {
       >
         <S.levainImg src={levainImage}></S.levainImg>
       </S.levainButton>
-      <S.levainText>나의 르방</S.levainText>
+      <S.levainText>나의 주멍</S.levainText>
     </Wrapper>
   );
 };
