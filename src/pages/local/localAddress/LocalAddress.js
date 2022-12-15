@@ -54,7 +54,7 @@ const LocalAddress = () => {
   return (
     <Wrapper>
       <S.textHeader>
-        <S.a>혜연님,</S.a>
+        <S.a>{localStorage.getItem("username")}님,</S.a>
 
         <S.a>
           만남을 위한 <S.Color>두번째</S.Color> 단계 입니다.

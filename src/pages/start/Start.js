@@ -19,6 +19,7 @@ const Start = () => {
   const [text, setText] = useRecoilState(userState);
   const handleButton = () => {
     setText({ name: inputState.name, url: inputState.url });
+    localStorage.setItem("username", inputState.name);
     navigate("select");
   };
 

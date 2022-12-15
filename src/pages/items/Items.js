@@ -30,7 +30,7 @@ const Items = () => {
           {/* <S.Back>&#60;</S.Back> */}
           <S.BackImage src={backImage} />
           <S.Title>
-            유나님, <br />
+            {localStorage.getItem("username")}님, <br />
             벌써 <S.Color>마지막</S.Color>단계에요!
           </S.Title>
           <S.Subtitle>교환하고 싶은 물건을 등록해주세요</S.Subtitle>
