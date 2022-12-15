@@ -6,6 +6,7 @@ import placeImage from "../../../assets/images/여행객/placeicon.svg";
 import * as S from "./TravelAddress.style";
 import SearchList from "../../../components/SearchList";
 import { useNavigate } from "react-router";
+import axios from "axios";
 const { kakao } = window;
 
 const TravelAddress = () => {
@@ -13,6 +14,7 @@ const TravelAddress = () => {
   const [isGet, setGet] = useState(false);
   const [LatList, pushLat] = useState([]);
   const [LongList, pushLong] = useState([]);
+  console.log(LatList, LongList);
   const navigate = useNavigate();
   const getAVG = (arr) => {
     var sum = 0;
@@ -48,6 +50,23 @@ const TravelAddress = () => {
   const handleChange = (event) => {
     setKeyword(event.target.value);
     setGet(false);
+  };
+
+  const handleNextButton = async () => {
+    const newArray = [];
+    LatList.forEach((it, i) => {
+      newArray.push({ latitude: LatList[i], longitude: LongList[i] });
+    });
+    const response = await axios({
+      method: "post",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
+      contentType: "application/json",
+      headers: { authorization: localStorage.getItem("accesstoken") },
+      data: {
+        address: newArray,
+      },
+    });
+    navigate("/items");
   };
 
   const [places, setPlace] = useState(null);
@@ -105,8 +124,6 @@ const TravelAddress = () => {
                   onClick={() => {
                     pushLat((oldArray) => [...oldArray, place.y]);
                     pushLong((oldArray) => [...oldArray, place.x]);
-                    console.log(LatList);
-                    console.log(LongList);
                   }}
                 >
                   선택
@@ -118,13 +135,7 @@ const TravelAddress = () => {
           <></>
         )}
       </S.resHolder>
-      <S.nextButton
-        onClick={() => {
-          navigate("/items");
-        }}
-      >
-        다음으로
-      </S.nextButton>
+      <S.nextButton onClick={handleNextButton}>다음으로</S.nextButton>
     </Wrapper>
   );
 };

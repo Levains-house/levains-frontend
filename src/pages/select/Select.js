@@ -15,7 +15,7 @@ const Select = () => {
   const handleLocal = async () => {
     const response = await axios({
       method: "post",
-      url: "api/users/sign-in",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in",
       contentType: "application/json",
       data: {
         username: text.name,
@@ -24,7 +24,6 @@ const Select = () => {
       },
     });
     localStorage.setItem("accesstoken", response.data.access_token);
-    console.log(response.data.access_token);
     navigate("/local_address");
   };
 
