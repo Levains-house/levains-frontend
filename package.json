@@ -44,5 +44,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy":"http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/"
 }

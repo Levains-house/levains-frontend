@@ -7,8 +7,11 @@ import levainImage from "../../assets/images/levainicon.png"
 import Home from "../home/Home"
 import Mypage from "../myPage/Mypage"
 import logoImage from "../../assets/images/logo.svg"
+import Modal from './Modals/Modal'
+
 const Main = () => {
     const [isHome, Toggle] = useState(true);
+    const [ModalState, setModalState] = useState(false);
     return(
         <Wrapper>
             <S.headerWhiteBox></S.headerWhiteBox>
@@ -16,13 +19,13 @@ const Main = () => {
             {isHome ? 
             <>
             <S.headerText>혜연님,</S.headerText>
-            <S.headerText2>제주에서&nbsp;<text style={{color:'#86C3C7'}}>특별한 만남을</text>&nbsp;나눠보세요</S.headerText2>
+            <S.headerText2>제주에서&nbsp;<text style={{color:'#688FF2'}}>특별한 만남을</text>&nbsp;나눠보세요</S.headerText2>
             <Home/>
             </>
             :
             <>
             <S.headerText>혜연님,</S.headerText>
-            <S.headerText2><text style={{color:'#86C3C7'}}>나의 르방</text>&nbsp;확인해보세요!</S.headerText2>
+            <S.headerText2><text style={{color:'#688FF2'}}>나의 르방</text>&nbsp;확인해보세요!</S.headerText2>
             <Mypage />
             </>
             }
