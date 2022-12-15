@@ -5,14 +5,17 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  position: relative;
   border: 1px solid black;
   background-color: #faf9f9;
 
   margin-top: 4.7rem;
   position: relative;
 
-  /* overflow: hidden; */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 export { Wrapper };

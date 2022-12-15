@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BACKGROUND_PALETTE } from "./../../constants/palette";
+import { BACKGROUND_PALETTE } from "../../constants/palette";
 
 export const WrapperInner = styled.div`
   padding: 0 1.5rem;
@@ -141,10 +141,14 @@ export const MyItemsImageLabel = styled.label`
   background-color: white;
   border-radius: 0.5rem;
 `;
-
+export const FirstBox = styled.div`
+  display: flex;
+  align-items: center;
+  height: 4.5rem;
+`;
 export const MyItemsname = styled.input`
-  width: 34.2rem;
-  height: 3rem;
+  width: 22.5rem;
+  height: 4.5rem;
   /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
   padding: 2rem;
@@ -158,48 +162,10 @@ export const MyItemsname = styled.input`
   line-height: 20px;
   display: flex;
   align-items: center;
-
-  margin-top: 1rem;
-`;
-export const YourItemsname = styled.input`
-  width: 31.2rem;
-  height: 3rem;
-  border-radius: 1rem;
-  padding: 2rem;
-  box-sizing: border-box;
-  border: ${BACKGROUND_PALETTE.gray2} 1px solid;
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-`;
-export const YourItemsDescription = styled.input`
-  width: 31.2rem;
-  height: 3rem;
-  /* color: ${BACKGROUND_PALETTE.gray2}; */
-  border-radius: 1rem;
-  padding: 2rem;
-  box-sizing: border-box;
-  border: ${BACKGROUND_PALETTE.gray2} 1px solid;
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-
-  margin-top: 1rem;
 `;
 
 export const MyItemsDescription = styled.input`
-  width: 34.2rem;
+  width: 33rem;
   height: 3rem;
   /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
@@ -216,13 +182,6 @@ export const MyItemsDescription = styled.input`
   align-items: center;
 
   margin-top: 1rem;
-`;
-export const MyItemsCatagoryBox = styled.div`
-  display: flex;
-  position: relative;
-  align-items: center;
-  height: 6rem;
-  width: 34.2rem;
 `;
 
 export const YourItemsCatagoryBox = styled.div`
@@ -237,8 +196,9 @@ export const AddButtonWrapper = styled.div`
   position: relative;
   align-items: center;
   height: 3rem;
-  margin-bottom: 6rem;
 `;
+export const SecondBox = styled.div``;
+
 export const AddButton = styled.div`
   left: 0;
   right: 0;
@@ -281,6 +241,9 @@ export const MyItemsCatagory = styled.select`
   margin-top: 1rem;
 
   padding: 0 1rem;
+
+  height: 4.5rem;
+  margin-left: 1.5rem;
 `;
 export const MyItemsButton = styled.button`
   position: absolute;
