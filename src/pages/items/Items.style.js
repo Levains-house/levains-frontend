@@ -4,6 +4,7 @@ import { BACKGROUND_PALETTE } from "./../../constants/palette";
 export const WrapperInner = styled.div`
   padding: 0 1.5rem;
   margin-top: 3rem;
+  overflow-y: scroll;
 `;
 
 export const Back = styled.div`
@@ -11,6 +12,8 @@ export const Back = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
 `;
 
 export const Title = styled.div`
@@ -18,34 +21,51 @@ export const Title = styled.div`
   font-weight: 700;
 `;
 
+export const Color = styled.span`
+  color: #86c3c7;
+`;
+
+export const WhoseToggleBox = styled.div`
+  width: 26rem;
+  border: 1px solid #e1e1e8;
+  display: flex;
+  left: 0;
+  right: 0;
+  margin: auto;
+  border-radius: 2rem;
+  margin: 3rem auto;
+  padding: 0.2rem;
+`;
+
+export const WhoseToggleButton = styled.div`
+  width: 13rem;
+  height: 4.7rem;
+  background-color: ${(props) => (props.isOn ? "#ffd058" : "white")};
+
+  color: ${(props) => (props.isOn ? "white" : "#A9ABB8")};
+  border-radius: 2rem;
+  font-size: 1.6rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Subtitle = styled.div`
   font-size: 1.6rem;
+  font-weight: 500;
+  margin-top: 0.2rem;
 `;
 
-export const MyItemsBox = styled.div``;
+export const MyItemsBox = styled.div`
+  margin-top: 1rem;
+`;
 export const MyItemsBoxAdd = styled.div`
-  width: 29.6rem;
-  height: 31.1rem;
-  box-shadow: 1px 5px 5px gray;
-  border-radius: 2rem;
-
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 1rem;
-`;
-
-export const YourItemsBoxAdd = styled.div`
-  width: 29.3rem;
-  height: 19rem;
-  box-shadow: 1px 5px 5px gray;
-  border-radius: 2rem;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1rem;
-  position: relative;
+  margin-top: 1rem;
 `;
 
 export const ItemsBoxTitle = styled.p`
@@ -59,16 +79,27 @@ export const ItemsBoxTitle = styled.p`
 `;
 
 export const YourItemsBox = styled.div`
-  /* display: flex;
-  justify-content: center;
+  margin-top: 1rem;
+`;
+
+export const YourItemsBoxAdd = styled.div`
+  display: flex;
   flex-direction: column;
-  background-color: Red; */
+  align-items: center;
+  padding: 1rem;
+  position: relative;
+  border: 1px solid #cdced6;
+  width: 35rem;
+  /* height: 22.6rem; */
+  border-radius: 2rem;
+  padding: 2rem;
+  box-sizing: border-box;
 `;
 export const YourItemsBoxInner = styled.div``;
 
 export const MyItemsImageBox = styled.div`
-  width: 25.2rem;
-  height: 15.6rem;
+  width: 35rem;
+  height: 25.9rem;
   display: block;
   border-radius: 2rem;
   background-color: #d9d9d9;
@@ -91,7 +122,6 @@ export const MyItemsToggle = styled.div`
 
 export const MyItemsImageInput = styled.input`
   position: absolute;
-
   display: none;
 `;
 export const MyItemsImageLabel = styled.label`
@@ -113,9 +143,45 @@ export const MyItemsImageLabel = styled.label`
 `;
 
 export const MyItemsname = styled.input`
-  width: 25rem;
+  width: 34.2rem;
   height: 3rem;
-  color: ${BACKGROUND_PALETTE.gray2};
+  /* color: ${BACKGROUND_PALETTE.gray2}; */
+  border-radius: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: ${BACKGROUND_PALETTE.gray2} 1px solid;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+
+  margin-top: 1rem;
+`;
+export const YourItemsname = styled.input`
+  width: 31.2rem;
+  height: 3rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: ${BACKGROUND_PALETTE.gray2} 1px solid;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+`;
+export const YourItemsDescription = styled.input`
+  width: 31.2rem;
+  height: 3rem;
+  /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
   padding: 2rem;
   box-sizing: border-box;
@@ -133,9 +199,9 @@ export const MyItemsname = styled.input`
 `;
 
 export const MyItemsDescription = styled.input`
-  width: 25rem;
+  width: 34.2rem;
   height: 3rem;
-  color: ${BACKGROUND_PALETTE.gray2};
+  /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
   padding: 2rem;
   box-sizing: border-box;
@@ -156,15 +222,47 @@ export const MyItemsCatagoryBox = styled.div`
   position: relative;
   align-items: center;
   height: 6rem;
-  width: 25rem;
+  width: 34.2rem;
 `;
 
+export const YourItemsCatagoryBox = styled.div`
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 6rem;
+  width: 31.2rem;
+`;
+export const AddButtonWrapper = styled.div`
+  /* background-color: red; */
+  position: relative;
+  align-items: center;
+  height: 3rem;
+`;
+export const AddButton = styled.div`
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  position: absolute;
+  border: none;
+  padding: 1rem;
+  font-size: 2rem;
+  width: 1rem;
+  height: 1rem;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  border: 1px #cdced6 solid;
+  color: #cdced6;
+  border-radius: 50%;
+`;
 export const MyItemsCatagory = styled.select`
   position: absolute;
   left: 0;
   width: 10rem;
   height: 4rem;
-  color: ${BACKGROUND_PALETTE.gray2};
+  /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
   padding: 2rem;
   box-sizing: border-box;
@@ -178,20 +276,23 @@ export const MyItemsCatagory = styled.select`
   display: flex;
   align-items: center;
   left: 0;
-
+  width: 12.6rem;
   margin-top: 1rem;
+
+  padding: 0 1rem;
 `;
 export const MyItemsButton = styled.button`
   position: absolute;
 
   right: 0;
-  width: 10.065rem;
+  width: 12.6rem;
   height: 4rem;
   border-radius: 2rem;
   border: 1px solid #ffd058;
-  color: #ffd058;
+  /* color: #ffd058; */
   font-size: 1.4rem;
   background-color: white;
+  cursor: pointer;
 `;
 export const MyItemsOption = styled.option``;
 
