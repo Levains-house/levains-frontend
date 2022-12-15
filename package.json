@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
+    "http-proxy-middleware": "^2.0.6",
     "install": "^0.13.0",
     "lodash": "^4.17.21",
     "npm": "^9.2.0",
@@ -45,6 +46,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "proxy": "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/"
+  }
 }

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router";
 import axios from "axios";
 import _ from "lodash";
 import api from "../../api/api";
+import image from "./sample.png";
 
 const MYOPTIONS = [
   { id: 0, name: "카테고리", value: "default" },
@@ -41,47 +42,51 @@ const Items = () => {
       };
     });
   };
+  // "wsl"
 
   const navigate = useNavigate();
   const handleMyButton = async () => {
     // 파일 전송(내 아이템)
     const formData = new FormData();
-    console.log(
-      myNameState,
-      categoryState,
-      myDescriptionState,
-      yourCategoryState
-    );
+
     formData.append("image", myImageState[0]);
     formData.append("name", myNameState);
     formData.append("description", myDescriptionState);
     formData.append("category", categoryState);
     formData.append("purpose", "SHARE");
-    console.log(formData);
-    const response = await api({
+    console.log(localStorage.getItem("accesstoken"));
+    const response = await axios({
       method: "post",
-      url: "/api/items/register",
-      header: {
-        "Context-Type": "multipart/form-data",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        authorization: localStorage.getItem("accesstoken"),
       },
-      data: {
-        formData,
-      },
+      data: formData,
     });
     console.log(response);
   };
-  const handleYourButton = () => {
-    api.post({
-      url: "/api/items/register",
-      data: {
-        username: myImageState,
-        name: yourNameState,
-        descriptoin: yourDescriptionState,
-        // category: categoryState,
-        item_type: "OPPONENT",
+  const handleYourButton = async () => {
+    // 파일 전송(내 아이템)
+    const formData = new FormData();
+    console.log(yourNameState, yourDescriptionState, yourCategoryState);
+
+    formData.append("name", yourNameState);
+    formData.append("description", yourDescriptionState);
+    formData.append("category", yourCategoryState);
+    formData.append("purpose", "WANT");
+    const response = await axios({
+      method: "post",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        authorization: localStorage.getItem("accesstoken"),
       },
+      data: formData,
     });
+    console.log(response);
   };
+
   const handleCategory = (e) => {
     setCategoryState(e.target.value);
   };
@@ -181,7 +186,7 @@ const Items = () => {
                     ))}
                   </S.MyItemsCatagory>
                   <S.MyItemsButton onClick={handleMyButton}>
-                    등록
+                    등록sssss
                   </S.MyItemsButton>
                 </S.MyItemsCatagoryBox>
               </S.MyItemsBoxAdd>
@@ -211,7 +216,7 @@ const Items = () => {
                       </S.MyItemsOption>
                     ))}
                   </S.MyItemsCatagory>
-                  <S.MyItemsButton onClick={handleMyButton}>
+                  <S.MyItemsButton onClick={handleYourButton}>
                     등록
                   </S.MyItemsButton>
                 </S.YourItemsCatagoryBox>
