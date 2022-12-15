@@ -43,7 +43,7 @@ const Items = () => {
               }}
               isOn={whoseToggleState === "my"}
             >
-              나의 르방
+              나의 주멍
             </S.WhoseToggleButton>
             <S.WhoseToggleButton
               onClick={() => {
@@ -51,7 +51,7 @@ const Items = () => {
               }}
               isOn={whoseToggleState === "your"}
             >
-              상대 르방
+              너의 주멍
             </S.WhoseToggleButton>
           </S.WhoseToggleBox>
           {/* 컴포넌트 분리 */}

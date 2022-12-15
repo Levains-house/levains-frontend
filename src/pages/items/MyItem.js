@@ -21,7 +21,6 @@ const MyItem = () => {
   const [imageToggle, setImageToggle] = useState(false);
 
   console.log(myNameState);
-
   const encodeFileToBase64 = (fileBlob) => {
     const reader = new FileReader();
     reader.readAsDataURL(fileBlob);
@@ -93,13 +92,19 @@ const MyItem = () => {
             </div>
           )}
         </S.MyItemsImageBox>
-        <S.FirstBox>
-          <S.MyItemsname
-            onChange={(e) => {
-              setMyNameState(e.target.value);
-            }}
-            placeholder="상품명을 입력해주세요"
-          />
+        <S.MyItemsname
+          onChange={(e) => {
+            setMyNameState(e.target.value);
+          }}
+          placeholder="상품명을 입력해주세요"
+        />
+        <S.MyItemsDescription
+          onChange={(e) => {
+            setMyDescriptionState(e.target.value);
+          }}
+          placeholder="상세설명을 입력해주세요"
+        />
+        <S.MyItemsCatagoryBox>
           <S.MyItemsCatagory onChange={handleCategory}>
             {MYOPTIONS.map((option) => (
               <S.MyItemsOption
@@ -111,17 +116,8 @@ const MyItem = () => {
               </S.MyItemsOption>
             ))}
           </S.MyItemsCatagory>
-        </S.FirstBox>
-
-        <S.SecondBox>
-          <S.MyItemsDescription
-            onChange={(e) => {
-              setMyDescriptionState(e.target.value);
-            }}
-            placeholder="상세설명을 입력해주세요"
-          />
-        </S.SecondBox>
-        <S.MyItemsButton onClick={handleMyButton}>등록</S.MyItemsButton>
+          <S.MyItemsButton onClick={handleMyButton}>등록</S.MyItemsButton>
+        </S.MyItemsCatagoryBox>
       </S.MyItemsBoxAdd>
     </S.MyItemsBox>
   );

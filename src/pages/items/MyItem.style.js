@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { BACKGROUND_PALETTE } from "../../constants/palette";
+import { BACKGROUND_PALETTE } from "./../../constants/palette";
 
 export const WrapperInner = styled.div`
   padding: 0 1.5rem;
@@ -32,7 +32,7 @@ export const WhoseToggleBox = styled.div`
   right: 0;
   margin: auto;
   border-radius: 2rem;
-  margin: 3rem auto;
+  margin: 1.6rem auto;
   padding: 0.2rem;
 `;
 
@@ -98,7 +98,7 @@ export const YourItemsBoxAdd = styled.div`
 export const YourItemsBoxInner = styled.div``;
 
 export const MyItemsImageBox = styled.div`
-  width: 35rem;
+  width: 33rem;
   height: 25.9rem;
   display: block;
   border-radius: 2rem;
@@ -140,31 +140,11 @@ export const MyItemsImageLabel = styled.label`
   padding: 0.5rem;
   background-color: white;
   border-radius: 0.5rem;
+  font-size: 1.2rem;
+  padding: 0.2rem;
 `;
-export const FirstBox = styled.div`
-  display: flex;
-  align-items: center;
-  height: 4.5rem;
-`;
+
 export const MyItemsname = styled.input`
-  width: 22.5rem;
-  height: 4.5rem;
-  /* color: ${BACKGROUND_PALETTE.gray2}; */
-  border-radius: 1rem;
-  padding: 2rem;
-  box-sizing: border-box;
-  border: ${BACKGROUND_PALETTE.gray2} 1px solid;
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.4rem;
-  line-height: 20px;
-  display: flex;
-  align-items: center;
-`;
-
-export const MyItemsDescription = styled.input`
   width: 33rem;
   height: 3rem;
   /* color: ${BACKGROUND_PALETTE.gray2}; */
@@ -183,6 +163,69 @@ export const MyItemsDescription = styled.input`
 
   margin-top: 1rem;
 `;
+export const YourItemsname = styled.input`
+  width: 31.2rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: ${BACKGROUND_PALETTE.gray2} 1px solid;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+`;
+export const YourItemsDescription = styled.input`
+  width: 31.2rem;
+  height: 3rem;
+  /* color: ${BACKGROUND_PALETTE.gray2}; */
+  border-radius: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: ${BACKGROUND_PALETTE.gray2} 1px solid;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+
+  margin-top: 1rem;
+`;
+
+export const MyItemsDescription = styled.input`
+  width: 33rem;
+  height: 4.5rem;
+  /* color: ${BACKGROUND_PALETTE.gray2}; */
+  border-radius: 1rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  border: ${BACKGROUND_PALETTE.gray2} 1px solid;
+
+  font-family: "Noto Sans KR";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+
+  margin-top: 1rem;
+`;
+export const MyItemsCatagoryBox = styled.div`
+  display: flex;
+  position: relative;
+  align-items: center;
+  height: 6rem;
+  width: 33rem;
+`;
 
 export const YourItemsCatagoryBox = styled.div`
   display: flex;
@@ -196,9 +239,8 @@ export const AddButtonWrapper = styled.div`
   position: relative;
   align-items: center;
   height: 3rem;
+  margin-bottom: 6rem;
 `;
-export const SecondBox = styled.div``;
-
 export const AddButton = styled.div`
   left: 0;
   right: 0;
@@ -221,8 +263,8 @@ export const AddButton = styled.div`
 export const MyItemsCatagory = styled.select`
   position: absolute;
   left: 0;
-  width: 10rem;
-  height: 4rem;
+
+  height: 4.5rem;
   /* color: ${BACKGROUND_PALETTE.gray2}; */
   border-radius: 1rem;
   padding: 2rem;
@@ -241,22 +283,23 @@ export const MyItemsCatagory = styled.select`
   margin-top: 1rem;
 
   padding: 0 1rem;
-
-  height: 4.5rem;
-  margin-left: 1.5rem;
+  width: 12rem;
 `;
 export const MyItemsButton = styled.button`
   position: absolute;
 
   right: 0;
-  width: 12.6rem;
-  height: 4rem;
+
+  height: 4.5rem;
   border-radius: 2rem;
   border: 1px solid #ffd058;
   /* color: #ffd058; */
   font-size: 1.4rem;
   background-color: white;
   cursor: pointer;
+  display: block;
+  border-radius: 1.5rem;
+  width: 12rem;
 `;
 export const MyItemsOption = styled.option``;
 

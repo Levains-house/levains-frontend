@@ -32,8 +32,9 @@ export const WhoseToggleBox = styled.div`
   right: 0;
   margin: auto;
   border-radius: 2rem;
-  margin: 3rem auto;
+  margin: 1.6rem auto 1rem auto;
   padding: 0.2rem;
+  background-color: white;
 `;
 
 export const WhoseToggleButton = styled.div`
