@@ -5,6 +5,7 @@ import sameImage from "../../assets/images/same.png"
 import axios from 'axios'
 import placeImage from "../../assets/images/여행객/placeicon.svg"
 import ItemInfo from "./ItemInfo";
+import cateMap from "./categoryMap.json"
 
 const Home = () => {
   const [isWalk, setWalk] = useState(true);
@@ -43,7 +44,7 @@ const Home = () => {
     console.log("error");
     return null;
   }
-
+  var listitem
   return( 
     <>
       <S.homeBack></S.homeBack>
@@ -62,8 +63,9 @@ const Home = () => {
       <S.lebangText>내가 찾던 바로 그 르방!</S.lebangText>
       <S.itemsContainer>
       {/* Map으로 뿌리기 */}
-      {users.category_items.map((item)=>{
-        <div style={{marginLeft:"1.5rem"}}>
+      {(
+        listitem = users.category_items.map((item) => (
+          <div style={{marginLeft:"1.5rem"}}>
         <S.itemButton 
         style={{flexDirection:'column'}}
         onClick={()=>{
@@ -74,15 +76,15 @@ const Home = () => {
           <S.itemText>{item.name}</S.itemText>
           <S.iconContainer>
           <S.sameButton><S.sameImg src={sameImage}></S.sameImg></S.sameButton>
-            <S.category>{item.category}</S.category>
+            <S.category>{cateMap[item.category]}</S.category>
           </S.iconContainer>
         </S.itemButton>
         </div>
-      })}
-
+        ))
+      )}
       
-{/* 
-      <div style={{marginLeft:"1.5rem"}}>
+
+      {/* <div style={{marginLeft:"1.5rem"}}>
       <S.itemButton 
       style={{flexDirection:'column'}}
       onClick={()=>{
@@ -96,46 +98,53 @@ const Home = () => {
           <S.category>육아용품</S.category>
         </S.iconContainer>
       </S.itemButton>
-      </div> */}
+      </div>
+       */}
       </S.itemsContainer>
 
       <S.lebangText2>여기 있어! 르방 체험</S.lebangText2>
       <S.resHolder>
-      {users.experience_items.map((item)=>{
-        <S.styledLi onClick={()=>{
-          console.log("push");
-          setModalNum(item.item_id); // item_id
-        }}>
-          <S.placeBox>
-            <S.placeIcon src={placeImage}></S.placeIcon>
-            <div>
-                <S.placeName>{item.name}</S.placeName>
-                <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
-            </div>
-          </S.placeBox>
-        </S.styledLi>
-
-      })}
+      {(
+        listitem = users.experience_items.map((item) => (
+          <S.styledLi onClick={()=>{
+            console.log("push");
+            setModalNum(item.item_id); // item_id
+          }}>
+            <S.placeBox>
+              <S.placeIcon src={placeImage}></S.placeIcon>
+              <div>
+                  <S.placeName>{item.name}</S.placeName>
+                  <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
+              </div>
+            </S.placeBox>
+          </S.styledLi>
+        ))
+      )}
+      
 
       {/* Map으로 뿌리기 */}
       
       </S.resHolder>
-      {users.category_items.map((item)=>{
-        {(modalNum === item.item_id) 
-          && <ItemInfo 
-          item_id={item.item_id} 
-          img_url={item.img_url} 
-          name={item.name} 
-          description={item.description} 
-          category={item.category} 
-          kakao_talk_chatting_url={item.kakao_talk_chatting_url} 
-          want_name={item.want_name}
-          want_description={item.want_description}
-          want_category={item.want_category}
-          setModalNum={setModalNum}
-          isItem={true}
-          />}
-      })}
+
+      {(
+        listitem = users.category_items.map((item) => (
+          (modalNum === item.item_id) 
+            && <ItemInfo 
+            item_id={item.item_id} 
+            img_url={item.img_url} 
+            name={item.name} 
+            description={item.description} 
+            category={item.category} 
+            kakao_talk_chatting_url={item.kakao_talk_chatting_url} 
+            want_name={item.want_name}
+            want_description={item.want_description}
+            want_category={item.want_category}
+            setModalNum={setModalNum}
+            isItem={true}
+            />
+        ))
+      )}
+
       {users.experience_items.map((item)=>{
         {(modalNum === item.item_id) 
           && <ItemInfo 
