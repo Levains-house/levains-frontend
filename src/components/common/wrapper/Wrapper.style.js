@@ -10,8 +10,9 @@ const Wrapper = styled.div`
   background-color: #faf9f9;
 
   margin-top: 4.7rem;
-  background-color: red;
   position: relative;
+
+  /* overflow: hidden; */
 `;
 
-export { Wrapper, WrapperInner };
+export { Wrapper };

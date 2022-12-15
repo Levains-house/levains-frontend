@@ -12,10 +12,8 @@ import { useNavigate } from "react-router";
 const Select = () => {
   const [text, setText] = useRecoilState(userState);
   const navigate = useNavigate();
-  console.log(text);
-  const handleLocal = () => {
-    console.log(text);
-    axios({
+  const handleLocal = async () => {
+    const response = await axios({
       method: "post",
       url: "api/users/sign-in",
       contentType: "application/json",
@@ -25,10 +23,12 @@ const Select = () => {
         role: "LOCAL",
       },
     });
+    localStorage.setItem("accesstoken", response.data.access_token);
+    console.log(response.data.access_token);
     navigate("/local_address");
   };
+
   const handleTravel = () => {
-    console.log(text);
     axios({
       method: "post",
       url: "api/users/sign-in",
