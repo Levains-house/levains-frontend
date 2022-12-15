@@ -27,12 +27,12 @@ const Select = () => {
       },
     });
 
+    localStorage.setItem("accesstoken", response.data.access_token);
     if (response.status === 201) {
       navigate("/local_address");
     } else {
       navigate("/main");
     }
-    localStorage.setItem("accesstoken", response.data.access_token);
     //
   };
 
