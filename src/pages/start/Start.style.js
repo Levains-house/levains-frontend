@@ -1,6 +1,11 @@
 import styled from "styled-components";
 import { BACKGROUND_PALETTE } from "./../../constants/palette";
 
+export const WrapperInner = styled.div`
+  height: 90%;
+  background-color: Red;
+`;
+
 const InputBox = styled.div`
   position: absolute;
   top: 39.7rem;
@@ -34,10 +39,10 @@ const Input = styled.input`
 const MainImage = styled.img`
   display: block;
   position: absolute;
-  left: 13.6rem;
-
+  left: 0;
+  right: 0;
   margin: auto;
-  top: 15rem;
+  top: 18rem;
   width: 16.3rem;
 `;
 
@@ -46,10 +51,10 @@ const ButtonBox = styled.div`
   right: 0;
   margin: auto;
   position: absolute;
-  cursor: pointer;
   display: flex;
   justify-content: center;
-  bottom: 2rem;
+  top: 0rem;
+  /* bottom: 5.2rem; */
 `;
 
 export const MainTitle = styled.div`

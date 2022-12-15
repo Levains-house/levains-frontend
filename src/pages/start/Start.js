@@ -29,25 +29,27 @@ const Start = () => {
     });
   };
   return (
-    <Wrapper>
-      <S.MainImage src={mainLogo} />
-      <S.MainTitle>멘도롱주멍멍</S.MainTitle>
-      <S.InputBox>
-        <S.Input
-          placeholder="닉네임을 입력해주세요"
-          onChange={handleInputName}
-        />
-        <S.Input
-          placeholder="카카오톡 오픈채팅방 URL을 입력해주세요"
-          onChange={handleInputUrl}
-        />
-      </S.InputBox>
+    <>
+      <Wrapper>
+        <S.MainImage src={mainLogo} />
+        <S.MainTitle>멘도롱주멍</S.MainTitle>
+        <S.InputBox>
+          <S.Input
+            placeholder="닉네임을 입력해주세요"
+            onChange={handleInputName}
+          />
+          <S.Input
+            placeholder="카카오톡 오픈채팅방 URL을 입력해주세요"
+            onChange={handleInputUrl}
+          />
+        </S.InputBox>
+      </Wrapper>
       <S.ButtonBox>
         <BigButton size="long" handleButton={handleButton}>
           특별한 만남 시작하기
         </BigButton>
       </S.ButtonBox>
-    </Wrapper>
+    </>
   );
 };
 
