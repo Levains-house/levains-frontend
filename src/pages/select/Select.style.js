@@ -11,7 +11,8 @@ const Title = styled.div`
   font-weight: 500;
   font-size: 2rem;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
 `;
 export const Color = styled.span`
   color: #86c3c7;
@@ -34,10 +35,25 @@ const SelectBox = styled.div`
   font-weight: 500;
   font-size: 2rem;
   /* color: #ffffff; */
+  left: 0;
+  right: 0;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 20rem;
 `;
-
-export const SelectLeftBox = styled.div`
-  width: 19.5rem;
+export const msg = styled.p`
+  line-height: 0rem;
+`;
+export const SelectLeftBoxOuter = styled.div`
+  position: relative;
+`;
+export const SelectRightBoxOuter = styled.div`
+  position: relative;
+`;
+export const SelectLeftBox = styled.img`
+  width: 15rem;
+  height: 21.1rem;
   display: flex;
   justify-content: center;
   text-align: center;
@@ -46,26 +62,30 @@ const SelectLeft = styled.div`
   width: 15rem;
   height: 11rem;
 `;
-export const SelectRightBox = styled.div`
-  width: 19.5rem;
+export const SelectRightBox = styled.img`
+  width: 15rem;
+  height: 21.1rem;
   display: flex;
   justify-content: center;
   text-align: center;
+  margin-left: 1rem;
+  left: 0;
+  right: 0;
+  margin: auto;
 `;
 const SelectRight = styled.div``;
-const SelectIcon = styled.img`
-  width: 3rem;
-`;
+const SelectIcon = styled.img``;
 const SelectText = styled.p`
   color: white;
-  background-color: #ffdb66;
-  border-radius: 2rem;
-  width: 15rem;
-  height: 11rem;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  margin: auto;
 `;
 
 export {

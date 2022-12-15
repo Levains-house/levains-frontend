@@ -9,6 +9,9 @@ import src_airplane from "../../assets/airplane.png";
 import src_home from "../../assets/home.png";
 import { useNavigate } from "react-router";
 
+import imgLocal from "../../assets/images/selectLocal.png";
+import imgTravel from "../../assets/images/selectTravel.png";
+
 const Select = () => {
   const [text, setText] = useRecoilState(userState);
   const navigate = useNavigate();
@@ -27,16 +30,17 @@ const Select = () => {
     navigate("/local_address");
   };
 
-  const handleTravel = () => {
-    axios({
+  const handleTravel = async () => {
+    const response = await axios({
       method: "post",
-      url: "api/users/sign-in",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in",
       data: {
         username: text.name,
         kakao_talk_chatting_url: text.url,
         role: "travel",
       },
     });
+    localStorage.setItem("accesstoken", response.data.access_token);
     navigate("/travel_address");
   };
   return (
@@ -44,33 +48,29 @@ const Select = () => {
       <S.WrapperInner>
         <S.TitleBox>
           <S.Title>
-            <p>유나님,</p>
-
-            <p>
-              만남을 위한 <S.Color>첫번째 단계</S.Color> 입니다.
-            </p>
+            <S.msg>만나서 반가워요 :&#41;</S.msg>
+            <S.msg>
+              여정을 위한 <S.Color>첫번째 단계</S.Color> 입니다.
+            </S.msg>
           </S.Title>
-          <S.SubTitle>해당하는 곳을 선택해주세요.</S.SubTitle>
+          <S.SubTitle>해당하는 곳을 선택해주세요</S.SubTitle>
         </S.TitleBox>
         <S.SelectBox>
-          <S.SelectLeftBox>
-            <S.SelectLeft>
-              <S.SelectIcon src={src_home} />
-              <S.SelectText onClick={handleLocal}>
-                제주에
-                <br /> 살아요
-              </S.SelectText>
-            </S.SelectLeft>
-          </S.SelectLeftBox>
-          <S.SelectRightBox>
-            <S.SelectRight>
-              <S.SelectIcon src={src_airplane} />
-              <S.SelectText onClick={handleTravel}>
-                제주로
-                <br /> 떠나요
-              </S.SelectText>
-            </S.SelectRight>
-          </S.SelectRightBox>
+          <S.SelectLeftBoxOuter onClick={handleLocal}>
+            <S.SelectLeftBox src={imgLocal} />
+            <S.SelectText>
+              제주에
+              <br />
+              살아요
+            </S.SelectText>
+          </S.SelectLeftBoxOuter>
+          <S.SelectRightBoxOuter onClick={handleTravel}>
+            <S.SelectRightBox src={imgTravel} />
+            <S.SelectText>
+              제주로
+              <br /> 떠나요
+            </S.SelectText>
+          </S.SelectRightBoxOuter>
         </S.SelectBox>
       </S.WrapperInner>
     </Wrapper>
