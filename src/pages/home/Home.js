@@ -3,6 +3,7 @@ import * as S from "./Home.style";
 import itemImage from "../../assets/images/item.png"
 import sameImage from "../../assets/images/same.png"
 import axios from 'axios'
+import placeImage from "../../assets/images/여행객/placeicon.svg"
 
 const Home = () => {
   const [isWalk, setWalk] = useState(true);
@@ -144,6 +145,47 @@ const Home = () => {
       </S.itemsContainer>
 
       <S.lebangText2>여기 있어! 르방 체험</S.lebangText2>
+      <S.resHolder>
+      
+      <S.styledLi>
+        <S.placeBox>
+          <S.placeIcon src={placeImage}></S.placeIcon>
+          <div>
+              <S.placeName>해품은체험농장</S.placeName>
+              <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
+          </div>
+        </S.placeBox>
+      </S.styledLi>
+      
+      <S.styledLi>
+        <S.placeBox>
+          <S.placeIcon src={placeImage}></S.placeIcon>
+          <div>
+              <S.placeName>해품은체험농장</S.placeName>
+              <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
+          </div>
+        </S.placeBox>
+      </S.styledLi>
+      <S.styledLi>
+        <S.placeBox>
+          <S.placeIcon src={placeImage}></S.placeIcon>
+          <div>
+              <S.placeName>해품은체험농장</S.placeName>
+              <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
+          </div>
+        </S.placeBox>
+      </S.styledLi>
+      <S.styledLi>
+        <S.placeBox>
+          <S.placeIcon src={placeImage}></S.placeIcon>
+          <div>
+              <S.placeName>해품은체험농장</S.placeName>
+              <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
+          </div>
+        </S.placeBox>
+      </S.styledLi>
+
+      </S.resHolder>
     </>
   )
 };
