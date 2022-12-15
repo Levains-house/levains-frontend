@@ -44,7 +44,7 @@ export const titleText = styled.span`
 position: absolute;
 width: 9.4rem;
 height: 2.4rem;
-left: 14.1rem;
+left: 14.8rem;
 top: 10.7rem;
 
 /* Mediam/body1 M 16px */
@@ -63,10 +63,10 @@ color: #000000;
 `
 export const itemContainer = styled.div`
 position:absolute;
-height: 37.5rem;
+height: 10.7rem;
 width: 29.6rem;
-left: 5.1rem;
-top: 14.4rem;
+left: 4.6rem;
+top: 37rem;
 border-radius: 2rem;
 
 box-sizing: border-box;
@@ -75,25 +75,25 @@ background: #FFFFFF;
 /* gray scale/gray2 */
 
 border: 1px solid #CDCED6;
-border-radius: 20px;
+border-radius: 2rem;
 `
 
 
 export const itemimg = styled.img`
 position: absolute;
-left: 5.1rem;
+left: 4.6rem;
 top: 14.4rem;
-height: 26.4rem;
-width: 29.6rem;
+height: 21rem;
+width: 29.7rem;
 
 background: #D9D9D9;
-border-radius: 2rem 2rem 0px 0px;
+border-radius: 2rem;
 `
 
 export const dot1 = styled.div`
 position: absolute;
-left: 6.7rem;
-top: 42.2rem;
+left: 6.205rem;
+top: 38.9rem;
 height: 1.2rem;
 width: 1.2rem;
 
@@ -108,8 +108,8 @@ background: #58D37A;
 export const text1 = styled.span`
 height: 1.7rem;
 width: 14rem;
-left: 9.5rem;
-top: 41.8rem;
+left: 9.015rem;
+top: 38.5rem;
 //styleName: regular/text 12px;
 font-family: Noto Sans KR;
 font-size: 1.2rem;
@@ -136,8 +136,9 @@ gap: 1rem;
 width: 2.5rem;
 height: 2rem;
 position: absolute;
-left: 27.25rem;
-top: 41.4rem;
+
+right:6.369rem;
+top: 38.1rem;
 
 /* sub color */
 color: white;
@@ -157,21 +158,21 @@ flex-grow: 0;
 
 export const line1 = styled.div`
 position: absolute;
-width: 24.4rem;
-height: 0px;
-left: 8.3rem;
-top: 44.4rem;
+width: 12rem;
+height: 0rem;
+left: 9.015rem;
+top: 40.4rem;
 
 /* gray scale/gray3 */
 
-border: 0.5px solid #A9ABB8;
+border-top: 0.5px solid #A9ABB8;
 
 `
 
 export const nameText = styled.span`
 position: absolute;
-left: 8.9rem;
-top: 45rem;
+left: 9.015rem;
+top: 41.5rem;
 
 /* regular/text 12px */
 
@@ -179,7 +180,7 @@ font-family: 'Noto Sans KR';
 font-style: normal;
 font-weight: 400;
 font-size: 1.2rem;
-line-height: 1.7rem;
+line-height: 1.738rem;
 display: flex;
 align-items: center;
 
@@ -190,8 +191,8 @@ color: #3E404C;
 
 export const descriptionText = styled.span`
 position: absolute;
-left: 8.9rem;
-top: 47.3rem;
+left: 9.015rem;
+top: 43.3rem;
 
 /* regular/text 12px */
 
@@ -199,33 +200,34 @@ font-family: 'Noto Sans KR';
 font-style: normal;
 font-weight: 400;
 font-size: 1.2rem;
-line-height: 1.7rem;
+line-height: 1.738rem;
 display: flex;
 align-items: center;
+width: 22.4rem;
 
 /* gray scale/gray4 */
 
-color: #3E404C;
+color: #A9ABB8;
 `
 
 export const wantBox = styled.div`
 
 position: absolute;
-left: 5.1rem;
-top: 55.5rem;
+left: 4.6rem;
+top: 52.6rem;
 width: 29.6rem;
-height: 9.2rem;
+height: 10.7rem;
 background: #FFFFFF;
 /* gray scale/gray2 */
 
 border: 0.5px solid #CDCED6;
-border-radius: 1rem;
+border-radius: 2rem;
 `
 
 export const dot2 = styled.div`
 position: absolute;
-left: 6.7rem;
-top: 57.1rem;
+left: 6.205rem;
+top: 54.4rem;
 height: 1.2rem;
 width: 1.2rem;
 
@@ -239,8 +241,8 @@ background: #FFC000;
 
 export const text2 = styled.span`
 position: absolute;
-left: 8.9rem;
-top: 56.7rem;
+left: 9.015rem;
+top: 54rem;
 
 /* regular/text 12px */
 
@@ -262,8 +264,8 @@ color: #3E404C;
 
 export const text3 = styled.span`
 position: absolute;
-left: 8.3rem;
-top: 60.1rem;
+left: 9.015rem;
+top: 57rem;
 
 /* regular/text 12px */
 
@@ -284,8 +286,8 @@ height: 1.7rem;
 
 export const text4 = styled.span`
 position: absolute;
-left: 8.3rem;
-top: 62.2rem;
+left: 9.015rem;
+top: 58.8rem;
 
 /* regular/text 12px */
 
@@ -309,8 +311,8 @@ export const zzim = styled.div`
 box-sizing: border-box;
 
 position: absolute;
-left: 5.1rem;
-top: 66.3rem;
+left: 4.6rem;
+top: 65.70rem;
 
 /* main color */
 
@@ -320,6 +322,7 @@ border-radius: 1.5rem;
 height: 4rem;
 width: 8.7rem;
 
+
 `
 export const zzimText = styled.span`
 position: absolute;
@@ -327,7 +330,8 @@ left: 2.021rem;
 right: 1.751rem;
 top: 0.1rem;
 bottom: 0px;
-
+margin-left:0.2rem;
+margin-bottom:0.1rem;
 /* Mediam/button2 M 14px */
 
 font-family: 'Noto Sans KR';
@@ -348,8 +352,8 @@ export const chatButton = styled.button`
     box-sizing: border-box;
 
 position: absolute;
-left: 15rem;
-top: 66.3rem;
+left: 14.7rem;
+top: 65.65rem;
 
 /* main color */
 
@@ -403,14 +407,14 @@ width: 15.92877197265625rem;
 
 export const line2 = styled.div`
 position: absolute;
-width: 24.4rem;
+width: 12rem;
 height: 0px;
-left: 8.3rem;
-top: 59.325rem;
+left: 9.5rem;
+top: 56.2rem;
 
 /* gray scale/gray3 */
 
-border: 0.5px solid #A9ABB8;
+border-top: 0.5px solid #A9ABB8;
 `
 
 export const categoryBox2 = styled.span`
@@ -420,11 +424,11 @@ flex-direction: row;
 align-items: flex-start;
 padding: 0.4rem 1.7rem;
 gap: 1rem;
-width: 2.5rem;
+// width: 2.5rem;
 height: 2rem;
 position: absolute;
-left: 27.25rem;
-top: 56.2rem;
+right:6.205rem;
+top: 53.5rem;
 
 /* sub color */
 color: white;
@@ -440,4 +444,12 @@ align-items: center;
 flex: none;
 order: 0;
 flex-grow: 0;
+`
+
+export const sameImg = styled.img`
+position:absolute;    
+width: 3.3rem;
+    height: 3.3rem;
+    left: 17.8rem;
+    top: 48.5rem;
 `

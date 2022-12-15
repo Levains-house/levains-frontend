@@ -1,6 +1,7 @@
 import React from "react";
 import * as S from './ItemInfo.style'
 import cateMap from './categoryMap.json'
+import itemSameImg from '../../assets/images/itemInfoSame.png'
 
 const ItemInfo = (props) =>{
     // console.log(props.item_id)
@@ -33,6 +34,7 @@ const ItemInfo = (props) =>{
         <S.text4>{props.want_description}</S.text4>
         <S.zzim><S.zzimText>찜하기</S.zzimText></S.zzim>
         <a href={props.kakao_talk_chatting_url}><S.chatButton>채팅하기</S.chatButton></a>
+        <S.sameImg src={itemSameImg}></S.sameImg>
         </>
     );
 }
