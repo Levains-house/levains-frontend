@@ -179,6 +179,7 @@ export const itemImg = styled.img`
 height: 17.9rem;
 width: 16.7rem;
 border-radius: 20px 20px 0px 0px;
+object-fit:cover;
 `
 
 export const itemText = styled.text`

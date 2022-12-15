@@ -7,6 +7,7 @@ import * as S from "./TravelAddress.style";
 import SearchList from "../../../components/SearchList";
 import { useNavigate } from "react-router";
 import axios from "axios";
+import markerImg from '../../../assets/images/marker.png'
 const { kakao } = window;
 
 const TravelAddress = () => {
@@ -26,24 +27,28 @@ const TravelAddress = () => {
   };
 
   var centerPos = new kakao.maps.LatLng(33.400701, 126.570667);
-
+  var imageSrc = markerImg;
+  var imageSize = new kakao.maps.Size(64, 69) // 마커이미지의 크기입니다
+  var imageOption = {offset: new kakao.maps.Point(27, 50)}; 
   useEffect(() => {
     const container = document.getElementById("myMap");
     // if (LatList.length === 0) {
-    //   centerPos = new kakao.maps.LatLng(33.450701, 126.570667);
-    // } else {
-    //   centerPos = new kakao.maps.LatLng(getAVG(LatList), getAVG(LongList));
-    // }
-    const options = {
+      //   centerPos = new kakao.maps.LatLng(33.450701, 126.570667);
+      // } else {
+        //   centerPos = new kakao.maps.LatLng(getAVG(LatList), getAVG(LongList));
+        // }
+        const options = {
       center: centerPos,
       level: 10,
     };
+    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
     const map = new kakao.maps.Map(container, options);
 
     for (var i = 0; i < LatList.length; i++) {
       var marker = new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
         position: new kakao.maps.LatLng(LatList[i], LongList[i]), // 마커를 표시할 위치
+        image: markerImage
       });
     }
   }, [LatList]);
