@@ -51,6 +51,32 @@ const LocalAddress = () => {
     setGet(true);
   }; // onCompletePost 함수
 
+  const sendData = async () => {
+    const headers = {
+      "Content-Type": "application/json",
+      Authorization:
+        "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiSldUIiwidXNlcl9pZCI6OCwidXNlcm5hbWUiOiJ0MTIzIiwia2FrYW9fdGFsa19jaGF0dGluZ191cmwiOiJ0ZXN0ZXN0Iiwicm9sZSI6IlRSQVZFTCIsImlhdCI6MTY3MTEwMjUwMCwiZXhwIjoxNjczNjk0NTAwLCJpc3MiOiJhZG1pbiJ9.-GspI417TwHFee5oEITknNgOHBPM9J5jTM2-1rwneXA",
+    };
+    try {
+      const res = await axios.post(
+        "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
+        {
+          address: [
+            {
+              latitude: Long,
+              longitude: Lat,
+            },
+          ],
+        },
+        {
+          headers: headers,
+        }
+      );
+      console.log(res);
+    } catch (e) {
+      console.log(e);
+    }
+  };
   return (
     <Wrapper>
       <S.headerButton>
@@ -86,7 +112,14 @@ const LocalAddress = () => {
         style={postCodeStyle}
         onComplete={onCompletePost}
       ></DaumPostcode>
-      <S.nextButton onClick={handleNextButton}>다음으로</S.nextButton>
+      <S.nextButton
+        onClick={() => {
+          // console.log(Lat,Long);
+          navigate("./items");
+        }}
+      >
+        다음으로
+      </S.nextButton>
     </Wrapper>
   );
 };

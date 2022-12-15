@@ -4,6 +4,7 @@ import itemImage from "../../assets/images/item.png"
 import sameImage from "../../assets/images/same.png"
 import axios from 'axios'
 import placeImage from "../../assets/images/여행객/placeicon.svg"
+import ItemInfo from "./ItemInfo";
 
 const Home = () => {
   const [isWalk, setWalk] = useState(true);
@@ -12,16 +13,12 @@ const Home = () => {
   const [range, setRange] = useState(1.5);
   
   const [users, setUsers] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  
+
+  const [modalNum, setModalNum] = useState(-1);
+
   const fetchUsers = async () => {
       try {
-        // 요청이 시작 할 때에는 error 와 users 를 초기화하고
-        setError(null);
         setUsers(null);
-        // loading 상태를 true 로 바꿉니다.
-        setLoading(true);
       //   axios.defaults.headers.get['header1'] = "";
         const response = await axios.get(
           "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users?range="+String(range),{
@@ -30,22 +27,16 @@ const Home = () => {
           },}
         );
         setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
+        console.log(response);
       } catch (e) {
-        setError(e);
+        console.log(e);
       }
-      setLoading(false);
   };
 
   useEffect(() => {
       fetchUsers();
       // console.log("ddddd");
   }, [isWalk, isBus, isCar]);
-  
-  // if (loading) return <div>로딩중..</div>; 
-  // if (error) return <div>에러가 발생했습니다</div>;
-  
-  // if (!users) return null;
-    
 
   return(
     <>
@@ -64,9 +55,15 @@ const Home = () => {
         >차타고</S.carButton>
       <S.lebangText>내가 찾던 바로 그 르방!</S.lebangText>
       <S.itemsContainer>
+      {/* Map으로 뿌리기 */}
 
       <div style={{marginLeft:"1.5rem"}}>
-      <S.itemButton style={{flexDirection:'column'}}>
+      <S.itemButton 
+      style={{flexDirection:'column'}}
+      onClick={()=>{
+        console.log("push");
+        setModalNum(0); // item_id
+      }}>
         <S.itemImg src={itemImage}></S.itemImg>
         <S.itemText>셀린느 미디엄 버티컬 블랙</S.itemText>
         <S.iconContainer>
@@ -76,63 +73,14 @@ const Home = () => {
       </S.itemButton>
       </div>
       
+
       <div style={{marginLeft:"1.5rem"}}>
-      <S.itemButton style={{flexDirection:'column'}}>
-        <S.itemImg src={itemImage}></S.itemImg>
-        <S.itemText>셀린느 미디엄 버티컬 블랙</S.itemText>
-        <S.iconContainer>
-        <S.sameButton><S.sameImg src={sameImage}></S.sameImg></S.sameButton>
-          <S.category>육아용품</S.category>
-        </S.iconContainer>
-      </S.itemButton>
-      </div>
-      
-      <div style={{marginLeft:"1.5rem"}}>
-      <S.itemButton style={{flexDirection:'column'}}>
-        <S.itemImg src={itemImage}></S.itemImg>
-        <S.itemText>셀린느 미디엄 버티컬 블랙</S.itemText>
-        <S.iconContainer>
-        <S.sameButton><S.sameImg src={sameImage}></S.sameImg></S.sameButton>
-          <S.category>육아용품</S.category>
-        </S.iconContainer>
-      </S.itemButton>
-      </div>
-      
-      <div style={{marginLeft:"1.5rem"}}>
-      <S.itemButton style={{flexDirection:'column'}}>
-        <S.itemImg src={itemImage}></S.itemImg>
-        <S.itemText>셀린느 미디엄 버티컬 블랙</S.itemText>
-        <S.iconContainer>
-        <S.sameButton><S.sameImg src={sameImage}></S.sameImg></S.sameButton>
-          <S.category>육아용품</S.category>
-        </S.iconContainer>
-      </S.itemButton>
-      </div>
-      
-      <div style={{marginLeft:"1.5rem"}}>
-      <S.itemButton style={{flexDirection:'column'}}>
-        <S.itemImg src={itemImage}></S.itemImg>
-        <S.itemText>셀린느 미디엄 버티컬 블랙</S.itemText>
-        <S.iconContainer>
-        <S.sameButton><S.sameImg src={sameImage}></S.sameImg></S.sameButton>
-          <S.category>육아용품</S.category>
-        </S.iconContainer>
-      </S.itemButton>
-      </div>
-      
-      <div style={{marginLeft:"1.5rem"}}>
-      <S.itemButton style={{flexDirection:'column'}}>
-        <S.itemImg src={itemImage}></S.itemImg>
-        <S.itemText>셀린느 미디엄 버티컬 블랙</S.itemText>
-        <S.iconContainer>
-        <S.sameButton><S.sameImg src={sameImage}></S.sameImg></S.sameButton>
-          <S.category>육아용품</S.category>
-        </S.iconContainer>
-      </S.itemButton>
-      </div>
-      
-      <div style={{marginLeft:"1.5rem"}}>
-      <S.itemButton style={{flexDirection:'column'}}>
+      <S.itemButton 
+      style={{flexDirection:'column'}}
+      onClick={()=>{
+        console.log("push");
+        setModalNum(1); // item_id
+      }}>
         <S.itemImg src={itemImage}></S.itemImg>
         <S.itemText>셀린느 미디엄 버티컬 블랙</S.itemText>
         <S.iconContainer>
@@ -146,8 +94,11 @@ const Home = () => {
 
       <S.lebangText2>여기 있어! 르방 체험</S.lebangText2>
       <S.resHolder>
-      
-      <S.styledLi>
+      {/* Map으로 뿌리기 */}
+      <S.styledLi onClick={()=>{
+        console.log("push");
+        setModalNum(2); // item_id
+      }}>
         <S.placeBox>
           <S.placeIcon src={placeImage}></S.placeIcon>
           <div>
@@ -157,35 +108,12 @@ const Home = () => {
         </S.placeBox>
       </S.styledLi>
       
-      <S.styledLi>
-        <S.placeBox>
-          <S.placeIcon src={placeImage}></S.placeIcon>
-          <div>
-              <S.placeName>해품은체험농장</S.placeName>
-              <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
-          </div>
-        </S.placeBox>
-      </S.styledLi>
-      <S.styledLi>
-        <S.placeBox>
-          <S.placeIcon src={placeImage}></S.placeIcon>
-          <div>
-              <S.placeName>해품은체험농장</S.placeName>
-              <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
-          </div>
-        </S.placeBox>
-      </S.styledLi>
-      <S.styledLi>
-        <S.placeBox>
-          <S.placeIcon src={placeImage}></S.placeIcon>
-          <div>
-              <S.placeName>해품은체험농장</S.placeName>
-              <S.addrText>성산읍 수산리 279-3번지 동산관광농원</S.addrText>
-          </div>
-        </S.placeBox>
-      </S.styledLi>
-
       </S.resHolder>
+
+      {(modalNum === 0) && <ItemInfo item_id={"0"} img_url={"img_url"} name={"name"} description={"des"} category={"cate"} kakao_talk_chatting_url={"chat url"} setModalNum={setModalNum} />}
+      {(modalNum === 1) && <ItemInfo item_id={"1"} img_url={"img_url"} name={"name"} description={"des"} category={"cate"} kakao_talk_chatting_url={"chat url"} setModalNum={setModalNum} />}
+      {(modalNum === 2) && <ItemInfo item_id={"2"} img_url={"img_url"} name={"name"} description={"des"} category={"cate"} kakao_talk_chatting_url={"chat url"} setModalNum={setModalNum} />}
+
     </>
   )
 };
