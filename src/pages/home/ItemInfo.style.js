@@ -133,7 +133,7 @@ flex-direction: row;
 align-items: flex-start;
 padding: 0.4rem 1.7rem;
 gap: 1rem;
-width: 2.5rem;
+// width: 2.5rem;
 height: 2rem;
 position: absolute;
 
