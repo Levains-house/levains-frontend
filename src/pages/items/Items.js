@@ -41,13 +41,14 @@ const Items = () => {
       };
     });
   };
+  // "wsl"
 
   const navigate = useNavigate();
   const handleMyButton = async () => {
     // 파일 전송(내 아이템)
     const formData = new FormData();
     console.log(
-      myNameState,
+      myImageState[0],
       categoryState,
       myDescriptionState,
       yourCategoryState
@@ -57,16 +58,15 @@ const Items = () => {
     formData.append("description", myDescriptionState);
     formData.append("category", categoryState);
     formData.append("purpose", "SHARE");
-    console.log(formData);
-    const response = await api({
+    console.log(localStorage.getItem("accesstoken"));
+    const response = await axios({
       method: "post",
-      url: "/api/items/register",
-      header: {
-        "Context-Type": "multipart/form-data",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        authorization: localStorage.getItem("accesstoken"),
       },
-      data: {
-        formData,
-      },
+      data: formData,
     });
     console.log(response);
   };
@@ -181,7 +181,7 @@ const Items = () => {
                     ))}
                   </S.MyItemsCatagory>
                   <S.MyItemsButton onClick={handleMyButton}>
-                    등록
+                    등록sssss
                   </S.MyItemsButton>
                 </S.MyItemsCatagoryBox>
               </S.MyItemsBoxAdd>
