@@ -6,13 +6,15 @@ export const WrapperInner = styled.div`
   margin-top: 3rem;
 `;
 
-export const Back = styled.div`
+export const BackImage = styled.img`
   height: 5rem;
-  width: 100%;
+
   display: flex;
   align-items: center;
   font-size: 2rem;
   font-weight: 700;
+  width: 0.8rem;
+  left: 0.2rem;
 `;
 
 export const Title = styled.div`
