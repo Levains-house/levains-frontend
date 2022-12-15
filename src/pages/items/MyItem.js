@@ -46,16 +46,16 @@ const MyItem = () => {
     formData.append("category", categoryState);
     formData.append("purpose", "SHARE");
     console.log(localStorage.getItem("accesstoken"));
-    // const response = await axios({
-    //   method: "post",
-    //   url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
-    //   headers: {
-    //     "Content-Type": "multipart/form-data",
-    //     authorization: localStorage.getItem("accesstoken"),
-    //   },
-    //   data: formData,
-    // });
-    // console.log(response);
+    const response = await axios({
+      method: "post",
+      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
+      headers: {
+        "Content-Type": "multipart/form-data",
+        authorization: localStorage.getItem("accesstoken"),
+      },
+      data: formData,
+    });
+    console.log(response);
     setToggle(false);
     setData({
       name: myNameState,

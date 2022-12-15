@@ -143,6 +143,9 @@ export const MyItemsImageBox = styled.div`
   background-color: #d9d9d9;
   position: relative;
   background-image: url(${(props) => props.src});
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
 `;
 
 export const MyItemsToggle = styled.div`
