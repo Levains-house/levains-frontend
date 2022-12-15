@@ -244,7 +244,7 @@ export const sameButton = styled.button`
 `
 export const sameImg = styled.img`
     height: 1.8rem;
-    width: 1.9rem;
+    width: 1.8rem;
 `
 
 export const itemsContainer = styled.div`
@@ -256,6 +256,7 @@ export const itemsContainer = styled.div`
   // left:1.2rem;
   padding-left:1rem;
   padding-bottom:1rem;
+  padding-right:1rem;
 `
 
 
@@ -303,8 +304,9 @@ margin-top:0.1rem;
 
 `
 
-export const styledLi = styled.li`
-    list-style:none;
+export const styledLi = styled.button`
+  border: 1px solid transparent;
+  background:transparent;
 `
 
 export const placeIcon = styled.img`

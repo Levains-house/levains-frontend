@@ -6,6 +6,7 @@ import headerImage from "../../../assets/images/여행객/Vector.svg";
 import searchImage from "../../../assets/images/여행객/Union.svg";
 import { useNavigate } from "react-router";
 import SetLatLong from "../../../components/SetLatLong"
+import axios from "axios"
 
 const LocalAddress = () => {
   const [modalState, setModalState] = useState(false);
@@ -30,6 +31,30 @@ const LocalAddress = () => {
     setGet(true);
   }; // onCompletePost 함수
 
+  const sendData = async() => {
+    const headers = {
+        'Content-Type' : 'application/json',
+        'Authorization' : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0eXBlIjoiSldUIiwidXNlcl9pZCI6OCwidXNlcm5hbWUiOiJ0MTIzIiwia2FrYW9fdGFsa19jaGF0dGluZ191cmwiOiJ0ZXN0ZXN0Iiwicm9sZSI6IlRSQVZFTCIsImlhdCI6MTY3MTEwMjUwMCwiZXhwIjoxNjczNjk0NTAwLCJpc3MiOiJhZG1pbiJ9.-GspI417TwHFee5oEITknNgOHBPM9J5jTM2-1rwneXA"
+    }
+    try{
+        const res = await axios.post(
+            "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
+            {
+                "address":[
+                    {
+                        "latitude": Long,
+                        "longitude": Lat
+                    }
+                ]
+            },{
+                headers:headers
+            }
+        )
+        console.log(res);
+    } catch(e){
+        console.log(e);
+    }
+  }
   return (
     <Wrapper>
       <S.headerButton>
@@ -59,8 +84,9 @@ const LocalAddress = () => {
       ></DaumPostcode>
       <S.nextButton
         onClick={() => {
-            // console.log(Lat,Long);
-          navigate("./items");
+            sendData();
+            console.log(Long, Lat);
+            navigate("/items");
         }}
       >
         다음으로
