@@ -31,7 +31,7 @@ const ItemInfo = (props) =>{
         <S.text3>이름</S.text3>
         <S.text4>내용</S.text4>
         <S.zzim><S.zzimText>찜하기</S.zzimText></S.zzim>
-        <S.chatButton>채팅하기</S.chatButton>
+        <a href={props.kakao_talk_chatting_url}><S.chatButton>채팅하기</S.chatButton></a>
         </>
     );
 }
