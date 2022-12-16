@@ -1,12 +1,17 @@
 import styled from "styled-components";
 import { BACKGROUND_PALETTE } from "./../../constants/palette";
 
+export const WrapperInner = styled.div`
+  height: 90%;
+  background-color: Red;
+`;
+
 const InputBox = styled.div`
   position: absolute;
-  top: 30rem;
+  top: 39.7rem;
   left: 0;
   right: 0;
-  margin: auto;
+
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -31,6 +36,37 @@ const Input = styled.input`
   margin-top: 1rem;
 `;
 
-const MainImage = styled.img``;
+const MainImage = styled.img`
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 18rem;
+  width: 16.3rem;
+`;
 
-export { InputBox, Input, MainImage };
+const ButtonBox = styled.div`
+  left: 0;
+  right: 0;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  top: 0rem;
+  /* bottom: 5.2rem; */
+`;
+
+export const MainTitle = styled.div`
+  position: absolute;
+  top: 36rem;
+  left: 0;
+  right: 0;
+  margin: auto;
+  color: #ffc000;
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+`;
+
+export { InputBox, Input, MainImage, ButtonBox };
