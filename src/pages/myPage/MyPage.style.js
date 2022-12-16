@@ -5,6 +5,8 @@ export const MyRebangList = styled.section`
   height: 50rem;
   position: relative;
   top: 18rem;
+  box-shadow: 0px -0.4rem 0.5rem rgba(0, 0, 0, 0.1);
+  background-color: #faf9f9;
 `;
 
 export const MyRebangItem = styled.div`

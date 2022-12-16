@@ -22,7 +22,7 @@ export const Title = styled.div`
 `;
 
 export const Color = styled.span`
-  color: #86c3c7;
+  color: #78a484;
 `;
 
 export const WhoseToggleBox = styled.div`

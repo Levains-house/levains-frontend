@@ -47,7 +47,7 @@ const Start = () => {
       </Wrapper>
       <S.ButtonBox>
         <BigButton size="long" handleButton={handleButton}>
-          특별한 만남 시작하기
+          따뜻한 여정 시작하기
         </BigButton>
       </S.ButtonBox>
     </>

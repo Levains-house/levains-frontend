@@ -60,7 +60,7 @@ const Select = () => {
           <S.Title>
             <S.msg>만나서 반가워요 :&#41;</S.msg>
             <S.msg>
-              여정을 위한 <S.Color>첫번째 단계</S.Color> 입니다.
+              여정을 위한 <S.Color>첫번째</S.Color> 단계에요
             </S.msg>
           </S.Title>
           <S.SubTitle>해당하는 곳을 선택해주세요</S.SubTitle>

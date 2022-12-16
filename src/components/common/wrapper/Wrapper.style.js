@@ -5,7 +5,6 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  border: 1px solid black;
   background-color: #faf9f9;
 
   margin-top: 4.7rem;

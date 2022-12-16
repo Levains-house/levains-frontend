@@ -31,9 +31,13 @@ const Items = () => {
           <S.BackImage src={backImage} />
           <S.Title>
             {localStorage.getItem("username")}님, <br />
-            벌써 <S.Color>마지막</S.Color> 단계에요!
+            벌써 <S.Color>마지막 </S.Color>단계에요!
           </S.Title>
-          <S.Subtitle>교환하고 싶은 물건을 등록해주세요</S.Subtitle>
+          {whoseToggleState === "my" ? (
+            <S.Subtitle>교환하고 싶은 물건을 등록해주세요</S.Subtitle>
+          ) : (
+            <S.Subtitle>교환받고 싶은 물건을 등록해주세요</S.Subtitle>
+          )}
 
           <S.WhoseToggleBox>
             <S.WhoseToggleButton
@@ -54,8 +58,29 @@ const Items = () => {
             </S.WhoseToggleButton>
           </S.WhoseToggleBox>
           {/* 컴포넌트 분리 */}
-          {whoseToggleState === "my" && <MyItem />}
-          {whoseToggleState === "your" && <YourItem />}
+          {whoseToggleState === "my" && (
+            <>
+              <MyItem />
+              <MyItem />
+              <MyItem />
+              <MyItem />
+              <MyItem />
+              <MyItem />
+              <MyItem />
+              <MyItem />
+            </>
+          )}
+          {whoseToggleState === "your" && (
+            <>
+              <YourItem />
+              <YourItem />
+              <YourItem />
+              <YourItem />
+              <YourItem />
+              <YourItem />
+              <YourItem />
+            </>
+          )}
         </S.WrapperInner>
       </Wrapper>
       <BigButton size="long" handleButton={handleNextButton}>

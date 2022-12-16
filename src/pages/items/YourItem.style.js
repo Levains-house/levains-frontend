@@ -55,7 +55,7 @@ export const ToggleDescription = styled.div`
   position: absolute;
   left: 1.5rem;
   margin: auto;
-  bottom: 2.5rem;
+  bottom: 4rem;
   color: #a9abb8;
   padding-top: 1rem;
   box-sizing: border-box;

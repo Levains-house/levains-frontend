@@ -45,8 +45,8 @@ const Main = () => {
           <S.headerText>{localStorage.getItem("username")}님,</S.headerText>
           <S.headerText2>
             제주에서&nbsp;
-            <text style={{ color: "#86C3C7" }}>특별한 만남을</text>
-            &nbsp;나눠보세요
+            <text style={{ color: "#78A484" }}>특별한 여정</text>을
+            &nbsp;시작해보세요!
           </S.headerText2>
           <Home />
         </>
