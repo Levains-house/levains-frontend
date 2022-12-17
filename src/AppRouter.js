@@ -7,7 +7,6 @@ import Select from "./pages/select/Select";
 import Start from "./pages/start/Start";
 import TravelAddress from "./pages/travel/travelAddress/TravelAddress";
 import TravelItems from "./pages/travel/travelItems/TravelItems";
-import Home from "./pages/main/Main";
 import { RecoilRoot } from "recoil";
 import Items from "./pages/items/Items";
 

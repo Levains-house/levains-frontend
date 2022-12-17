@@ -15,21 +15,19 @@ const TravelAddress = () => {
   const [isGet, setGet] = useState(false);
   const [LatList, pushLat] = useState([]);
   const [LongList, pushLong] = useState([]);
-  console.log(LatList, LongList);
+  // console.log(LatList, LongList);
   const navigate = useNavigate();
-  const getAVG = (arr) => {
-    var sum = 0;
-    var len = arr.length;
-    for (var i = 0; i < len; i++) {
-      sum += arr[i];
-    }
-    return sum / len;
-  };
+  
+  // const getAVG = (arr) => {
+  //   var sum = 0;
+  //   var len = arr.length;
+  //   for (var i = 0; i < len; i++) {
+  //     sum += arr[i];
+  //   }
+  //   return sum / len;
+  // };
 
-  var centerPos = new kakao.maps.LatLng(33.400701, 126.570667);
-  var imageSrc = markerImg;
-  var imageSize = new kakao.maps.Size(64, 69) // 마커이미지의 크기입니다
-  var imageOption = {offset: new kakao.maps.Point(27, 50)}; 
+
   useEffect(() => {
     const container = document.getElementById("myMap");
     // if (LatList.length === 0) {
@@ -38,20 +36,20 @@ const TravelAddress = () => {
         //   centerPos = new kakao.maps.LatLng(getAVG(LatList), getAVG(LongList));
         // }
         const options = {
-      center: centerPos,
+      center: new kakao.maps.LatLng(33.400701, 126.570667),
       level: 10,
     };
-    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption)
+    var markerImage = new kakao.maps.MarkerImage(markerImg, new kakao.maps.Size(64, 69), {offset: new kakao.maps.Point(27, 50)})
     const map = new kakao.maps.Map(container, options);
 
     for (var i = 0; i < LatList.length; i++) {
-      var marker = new kakao.maps.Marker({
+      new kakao.maps.Marker({
         map: map, // 마커를 표시할 지도
         position: new kakao.maps.LatLng(LatList[i], LongList[i]), // 마커를 표시할 위치
         image: markerImage
       });
     }
-  }, [LatList]);
+  }, [LatList, LongList]);
 
   const handleChange = (event) => {
     setKeyword(event.target.value);
@@ -63,7 +61,7 @@ const TravelAddress = () => {
     LatList.forEach((it, i) => {
       newArray.push({ latitude: LatList[i], longitude: LongList[i] });
     });
-    const response = await axios({
+    await axios({
       method: "post",
       url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
       contentType: "application/json",
@@ -76,7 +74,7 @@ const TravelAddress = () => {
   };
 
   const [places, setPlace] = useState(null);
-  let listItem;
+  
   return (
     <Wrapper>
       <S.headerButton>
@@ -118,8 +116,8 @@ const TravelAddress = () => {
       )}
       <S.resHolder>
         {places ? (
-          (listItem = places.documents.map((place) => (
-            <S.styledLi>
+          (places.documents.map((place) => (
+            <S.styledLi key={place.place_name}>
               <S.placeBox>
                 <S.placeIcon src={placeImage}></S.placeIcon>
                 <div>

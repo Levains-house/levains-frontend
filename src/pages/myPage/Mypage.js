@@ -25,7 +25,7 @@ const Mypage = () => {
   }, []);
   console.log(List);
   const handleItem = async (e) => {
-    const response = await axios({
+    await axios({
       method: "put",
       url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/status",
       headers: {
@@ -36,6 +36,7 @@ const Mypage = () => {
         trade_status: "AFTER",
       },
     });
+
     await getMyRebang();
   };
   return (

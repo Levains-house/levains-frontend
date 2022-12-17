@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import Wrapper from "../../../components/common/wrapper/Wrapper";
 import * as S from "./LocalAddress.style";
 import DaumPostcode from "react-daum-postcode";
-import headerImage from "../../../assets/images/여행객/Vector.svg";
 import searchImage from "../../../assets/images/여행객/Union.svg";
 import { useNavigate } from "react-router";
 import SetLatLong from "../../../components/SetLatLong";
-import axios from "axios";
 import image from "../../../assets/images/localAddress.svg";
 
 const LocalAddress = () => {
@@ -17,25 +15,26 @@ const LocalAddress = () => {
   const [Lat, setLat] = useState(""); // 경도
   const [Long, setLong] = useState(""); // 위도
 
-  const handleNextButton = async () => {
-    const response = await axios({
-      method: "post",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
-      headers: {
-        authorization: localStorage.getItem("accesstoken"),
-      },
-      data: {
-        address: [
-          {
-            latitude: Long,
-            longitude: Lat,
-          },
-        ],
-      },
-    });
-    console.log(response);
-    navigate("/items");
-  };
+  // const handleNextButton = async () => {
+  //   const response = await axios({
+  //     method: "post",
+  //     url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
+  //     headers: {
+  //       authorization: localStorage.getItem("accesstoken"),
+  //     },
+  //     data: {
+  //       address: [
+  //         {
+  //           latitude: Long,
+  //           longitude: Lat,
+  //         },
+  //       ],
+  //     },
+  //   });
+  //   console.log(response);
+  //   navigate("/items");
+  // };
+
   const [isGet, setGet] = useState(false);
   const postCodeStyle = {
     position: "absolute",
@@ -70,6 +69,8 @@ const LocalAddress = () => {
       {isGet ? (
         <SetLatLong
           RoadAddr={inputAddressValue}
+          Lat={Lat}
+          Long={Long}
           setLat={setLat}
           setLong={setLong}
         ></SetLatLong>

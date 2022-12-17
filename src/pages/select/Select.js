@@ -5,15 +5,15 @@ import { userState } from "./../../atom/userState";
 import * as S from "./Select.style";
 import axios from "axios";
 
-import src_airplane from "../../assets/airplane.png";
-import src_home from "../../assets/home.png";
+// import src_airplane from "../../assets/airplane.png";
+// import src_home from "../../assets/home.png";
 import { useNavigate } from "react-router";
 
 import imgLocal from "../../assets/images/selectLocal.png";
 import imgTravel from "../../assets/images/selectTravel.png";
 
 const Select = () => {
-  const [text, setText] = useRecoilState(userState);
+  const text = useRecoilState(userState).text;
   const navigate = useNavigate();
   const handleLocal = async () => {
     const response = await axios({
