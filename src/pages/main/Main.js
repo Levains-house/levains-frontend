@@ -6,8 +6,6 @@ import homeImage from "../../assets/images/homeicon.png";
 import levainImage from "../../assets/images/levainicon.png";
 import Home from "../home/Home";
 import Mypage from "../myPage/Mypage";
-import logoImage from "../../assets/images/logo.svg";
-import Modal from "./Modals/Modal";
 import axios from "axios";
 import add from "../../assets/images/add.png";
 import { useNavigate } from "react-router";
