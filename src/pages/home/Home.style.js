@@ -15,92 +15,61 @@ export const homeBack = styled.div`
 `;
 
 export const walkButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0.4rem 1.7rem;
-  gap: 1rem;
-
   position: absolute;
   left: 2rem;
   top: 19.3rem;
-
-  /* sub color */
-
-  background: #ffc000;
-  border-radius: 2rem;
-
+  border-radius: 1rem;
   height: 2.7rem;
-  width: 8rem;
-  border-radius: 1.5rem;
-
-  padding: 0.4rem 1.7rem 0.4rem 1.7rem;
+  width: 7.3rem;
+  
+  padding: 0.4rem 1.7rem;
+  background: #ffc000;
 
   font-family: Noto Sans;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.9rem;
-  text-align: left;
+  text-align: center;
   color: #ffffff;
   border: 1px solid #faf9f9;
 `;
 
 export const busButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0.4rem 1.7rem;
-  gap: 1rem;
-
   position: absolute;
   left: 10.5rem;
   top: 19.3rem;
-
-  /* sub color */
-
-  background: #ffc000;
-
+  border-radius: 1rem;
   height: 2.7rem;
-  width: 8rem;
-  border-radius: 1.5rem;
-  padding: 0.4rem 1.7rem 0.4rem 1.7rem;
+  width: 7.3rem;
+  
+  padding: 0.4rem 1.7rem;
+  background: #ffc000;
 
   font-family: Noto Sans;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.9rem;
-  text-align: left;
+  text-align: center;
   color: #ffffff;
   border: 1px solid #faf9f9;
 `;
 
 export const carButton = styled.button`
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  padding: 0.4rem 1.7rem;
-  gap: 1rem;
-
   position: absolute;
   left: 19rem;
   top: 19.3rem;
-
-  /* sub color */
-
-  background-color: #ffc000;
-  border-radius: 2rem;
-
+  border-radius: 1rem;
   height: 2.7rem;
-  width: 8rem;
-  border-radius: 1.5rem;
-
-  /* padding: 0.4rem 1.7rem 0.4rem 1.7rem; */
+  width: 7.3rem;
+  
+  padding: 0.4rem 1.7rem;
+  background: #ffc000;
 
   font-family: Noto Sans;
   font-size: 1.4rem;
   font-weight: 500;
   line-height: 1.9rem;
-  text-align: left;
+  text-align: center;
   color: #ffffff;
   border: 1px solid #faf9f9;
 `;

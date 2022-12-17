@@ -4,9 +4,10 @@ export const MyRebangList = styled.section`
   padding: 2rem;
   height: 50rem;
   position: relative;
-  top: 18rem;
+  top: 17.6rem;
   box-shadow: 0px -0.4rem 0.5rem rgba(0, 0, 0, 0.1);
   background-color: #faf9f9;
+  border-radius: 1rem;
 `;
 
 export const MyRebangItem = styled.div`
