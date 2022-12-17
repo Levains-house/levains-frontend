@@ -16,7 +16,7 @@ export const headerButton = styled.button`
   background: white;
   border: 5px;
 `;
-export const headerText = styled.text`
+export const headerText = styled.a`
   position: absolute;
   left: 1.9rem;
   top: 10rem;
@@ -37,7 +37,7 @@ export const headerText = styled.text`
 
   color: #3e404c;
 `;
-export const headerText2 = styled.text`
+export const headerText2 = styled.a`
   position: absolute;
   left: 1.9rem;
   top: 12.9rem;
@@ -89,7 +89,7 @@ export const homeImg = styled.img`
   width: 2.267rem;
 `;
 
-export const homeText = styled.text`
+export const homeText = styled.a`
   position: absolute;
   left: 6.7rem;
   bottom: 1.56rem;
@@ -127,7 +127,7 @@ export const levainImg = styled.img`
     bc
 `;
 
-export const levainText = styled.text`
+export const levainText = styled.a`
   position: absolute;
   right: 6rem;
   bottom: 1.7rem;

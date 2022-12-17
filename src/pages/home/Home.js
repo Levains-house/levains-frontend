@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import * as S from "./Home.style";
-import itemImage from "../../assets/images/item.png";
 import sameImage from "../../assets/images/same.png";
 import axios from "axios";
 import placeImage from "../../assets/images/여행객/placeicon.svg";
@@ -17,7 +16,7 @@ const Home = () => {
 
   const [modalNum, setModalNum] = useState(-1);
 
-  const fetchUsers = async () => {
+  const fetchUsers = useCallback(async () => {
     try {
       setUsers(null);
       //   axios.defaults.headers.get['header1'] = "";
@@ -35,18 +34,18 @@ const Home = () => {
     } catch (e) {
       console.log(e);
     }
-  };
+  },
+  [range]
+  );
 
   useEffect(() => {
     fetchUsers();
-    // console.log("ddddd");
-  }, [isWalk, isBus, isCar]);
+  }, [fetchUsers, isWalk, isBus, isCar]);
 
   if (!users) {
     console.log("error");
     return null;
   }
-  var listitem;
   return (
     <>
       <S.homeBack></S.homeBack>
@@ -87,7 +86,7 @@ const Home = () => {
       <S.itemsContainer>
         {/* Map으로 뿌리기 */}
         {
-          (listitem = users.category_items.map((item) => (
+          (users.category_items.map((item) => (
             <div style={{ marginLeft: "1.5rem" }}>
               <S.itemButton
                 style={{ flexDirection: "column" }}
@@ -130,7 +129,7 @@ const Home = () => {
       <S.lebangText2>여기 있어! 제주 체험</S.lebangText2>
       <S.resHolder>
         {
-          (listitem = users.experience_items.map((item) => (
+          (users.experience_items.map((item) => (
             <S.styledLi
               onClick={() => {
                 console.log("push");
@@ -152,7 +151,7 @@ const Home = () => {
       </S.resHolder>
 
       {
-        (listitem = users.category_items.map(
+        (users.category_items.map(
           (item) =>
             modalNum === item.item_id && (
               <ItemInfo
@@ -169,28 +168,31 @@ const Home = () => {
                 isItem={true}
               />
             )
-        ))
+          )
+        )
       }
 
-      {users.experience_items.map((item) => {
-        {
-          modalNum === item.item_id && (
-            <ItemInfo
-              item_id={item.item_id}
-              img_url={item.img_url}
-              name={item.name}
-              description={item.description}
-              category={item.category}
-              kakao_talk_chatting_url={item.kakao_talk_chatting_url}
-              want_name={"no"}
-              want_description={"no"}
-              want_category={"no"}
-              setModalNum={setModalNum}
-              isItem={false}
-            />
-          );
-        }
-      })}
+      {
+        (users.experience_items.map(
+          (item) => 
+            modalNum === item.item_id && (
+              <ItemInfo
+                item_id={item.item_id}
+                img_url={item.img_url}
+                name={item.name}
+                description={item.description}
+                category={item.category}
+                kakao_talk_chatting_url={item.kakao_talk_chatting_url}
+                want_name={"no"}
+                want_description={"no"}
+                want_category={"no"}
+                setModalNum={setModalNum}
+                isItem={false}
+              />
+            )
+          )
+        )
+      }
       {/* {(modalNum === 1) && <ItemInfo item_id={"1"} img_url={"img_url"} name={"name"} description={"des"} category={"cate"} kakao_talk_chatting_url={"chat url"} setModalNum={setModalNum} />} */}
       {/* {(modalNum === 2) && <ItemInfo item_id={"2"} img_url={"img_url"} name={"name"} description={"des"} category={"cate"} kakao_talk_chatting_url={"chat url"} setModalNum={setModalNum} />} */}
     </>

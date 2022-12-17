@@ -38,6 +38,7 @@ const YourItem = () => {
       },
       data: formData,
     });
+    console.log(response);
     setToggle(false);
 
     setData({
@@ -51,9 +52,9 @@ const YourItem = () => {
     setYourCategoryState(e.target.value);
   };
 
-  const change = (en) => {
-    console.log(MYOPTIONS.filter(it.value === en)[0]);
-  };
+  // const change = (en) => {
+  //   console.log(MYOPTIONS.filter(it.value === en)[0]);
+  // };
   console.log(data);
   return (
     <S.YourItemsBox>

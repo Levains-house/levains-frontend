@@ -46,7 +46,7 @@ export const nextButton = styled.button`
   border-style: solid;
 `;
 
-export const textHeader = styled.text`
+export const textHeader = styled.a`
   position: absolute;
   width: 36.5rem;
   height: 5.8rem;
@@ -67,7 +67,7 @@ export const textHeader = styled.text`
   color: #000000;
 `;
 
-export const placeText = styled.text`
+export const placeText = styled.a`
   position: absolute;
   width: 19.3rem;
   height: 3.1rem;
@@ -123,7 +123,7 @@ export const roadText = styled.span`
   left: 5.517rem;
 `;
 
-export const nextText = styled.text`
+export const nextText = styled.a`
   position: absolute;
   left: 17.1rem;
   top: 7.72rem;

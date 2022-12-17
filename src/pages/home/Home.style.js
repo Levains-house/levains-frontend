@@ -105,7 +105,7 @@ export const carButton = styled.button`
   border: 1px solid #faf9f9;
 `;
 
-export const lebangText = styled.text`
+export const lebangText = styled.a`
   height: 4rem;
   width: 35.9rem;
   position: absolute;
@@ -130,7 +130,7 @@ export const lebangText = styled.text`
 
   color: #000000;
 `;
-export const lebangText2 = styled.text`
+export const lebangText2 = styled.a`
   height: 4rem;
   width: 35.9rem;
   position: absolute;
@@ -181,7 +181,7 @@ export const itemImg = styled.img`
   object-fit:cover;
 `;
 
-export const itemText = styled.text`
+export const itemText = styled.a`
   //styleName: regular/text 12px;
   font-family: Noto Sans KR;
   font-size: 1.2rem;
@@ -271,7 +271,7 @@ export const placeBox = styled.div`
   overflow: auto;
 `;
 
-export const placeName = styled.text`
+export const placeName = styled.a`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
@@ -283,7 +283,7 @@ export const placeName = styled.text`
   margin-top: 1.3rem;
 `;
 
-export const addrText = styled.text`
+export const addrText = styled.a`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;

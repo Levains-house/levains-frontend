@@ -1,5 +1,4 @@
 import axios from "axios";
-import { useNavigate } from "react-router";
 // import { getCookie } from "../cookie";
 
 const api = axios.create({

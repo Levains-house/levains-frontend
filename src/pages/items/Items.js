@@ -2,20 +2,16 @@ import React, { useState } from "react";
 import { Wrapper } from "../../components/common/wrapper/Wrapper.style";
 import * as S from "./Items.style";
 import BigButton from "./../../components/common/button/BigButton/BigButton";
-import Input from "../../components/common/input/Input";
 import { useNavigate } from "react-router";
-import axios from "axios";
-import _ from "lodash";
-import api from "../../api/api";
-import image from "./sample.png";
+// import _ from "lodash";
 import MyItem from "./MyItem";
 import YourItem from "./YourItem";
 import backImage from "../../assets/images/back.svg";
 
 const Items = () => {
   const [whoseToggleState, setWhoseToggleState] = useState("my");
-  const [myCnt, setMyCnt] = useState(1);
-  const [yourCnt, setYourCnt] = useState(1);
+  // const [myCnt, setMyCnt] = useState(1);
+  // const [yourCnt, setYourCnt] = useState(1);
 
   const navigate = useNavigate();
 

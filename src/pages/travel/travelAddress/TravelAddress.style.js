@@ -13,7 +13,7 @@ export const headerImg = styled.img`
   height: 1.481rem;
   width: 1.534rem;
 `;
-export const textHeader1 = styled.text`
+export const textHeader1 = styled.a`
   position: absolute;
   width: 36.5rem;
   height: 2.9rem;
@@ -33,7 +33,7 @@ export const textHeader1 = styled.text`
   color: #000000;
 `;
 
-export const textHeader2 = styled.text`
+export const textHeader2 = styled.a`
   position: absolute;
   width: 26.9rem;
   height: 2.9rem;
@@ -53,7 +53,7 @@ export const textHeader2 = styled.text`
   align-items: center;
 `;
 
-export const placeText = styled.text`
+export const placeText = styled.a`
   position: absolute;
   // width: 19.3rem;
   height: 3.1rem;
@@ -174,7 +174,7 @@ export const placeBox = styled.div`
   overflow: auto;
 `;
 
-export const placeName = styled.text`
+export const placeName = styled.a`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
@@ -186,7 +186,7 @@ export const placeName = styled.text`
   margin-top: 1.3rem;
 `;
 
-export const addrText = styled.text`
+export const addrText = styled.a`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
@@ -216,9 +216,9 @@ export const placeIcon = styled.img`
 
 export const resHolder = styled.div`
   position: absolute;
-  top: 46.4rem;
+  top: 45rem;
   width: 39rem;
-  height: 27.1rem;
+  height: 28.1rem;
   overflow-y: scroll;
 `;
 

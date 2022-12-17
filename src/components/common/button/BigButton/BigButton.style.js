@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import {
-  BACKGROUND_PALETTE,
   COLOR_PALETTE,
 } from "./../../../../constants/palette";
 
