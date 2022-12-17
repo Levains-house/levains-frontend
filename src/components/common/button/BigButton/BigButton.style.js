@@ -26,7 +26,7 @@ const BigButton = styled.button`
   cursor: pointer;
   position: absolute;
 
-  top: 80rem;
+  // top: 80rem;
   /* bottom: 0; */
   left: 0;
   right: 0;

@@ -53,8 +53,8 @@ const ButtonBox = styled.div`
   position: absolute;
   display: flex;
   justify-content: center;
-  top: 0rem;
-  /* bottom: 5.2rem; */
+  // top: 0rem;
+  bottom: -26rem;
 `;
 
 export const MainTitle = styled.div`

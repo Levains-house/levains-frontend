@@ -133,8 +133,8 @@ export const MyItemsImageLabel = styled.label`
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 400;
-  font-size: 12px;
-  line-height: 17px;
+  font-size: 1.2rem;
+  line-height: 1.7rem;
   display: flex;
   align-items: center;
   border: 1px solid gray;
