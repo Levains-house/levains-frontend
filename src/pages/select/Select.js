@@ -13,7 +13,7 @@ import imgLocal from "../../assets/images/selectLocal.png";
 import imgTravel from "../../assets/images/selectTravel.png";
 
 const Select = () => {
-  const text = useRecoilState(userState).text;
+  const [text, setText] = useRecoilState(userState);
   const navigate = useNavigate();
   const handleLocal = async () => {
     const response = await axios({
