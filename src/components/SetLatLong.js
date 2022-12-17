@@ -17,7 +17,7 @@ const SetLatLong = (props) => {
           const response = await axios.get(
             "https://dapi.kakao.com/v2/local/search/address.json?analyze_type=exact&page=2&size=10&query="+String(RoadAddr),{
             headers: {
-                'Authorization': "KakaoAK b4b6ab56893dc911f31bd7af9e63545f"
+                'Authorization': process.env.REACT_APP_KAKAOMAP_API
             },}
           );
           setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
