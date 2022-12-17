@@ -16,7 +16,7 @@ const Start = () => {
       name: e.target.value,
     });
   };
-  const setText = useRecoilState(userState).setText;
+  const [text, setText] = useRecoilState(userState);
   const handleButton = () => {
     setText({ name: inputState.name, url: inputState.url });
     localStorage.setItem("username", inputState.name);
