@@ -32,7 +32,7 @@ export const WhoseToggleBox = styled.div`
   left: 0;
   right: 0;
   margin: auto;
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   margin: 1.6rem auto 1rem auto;
   padding: 0.2rem;
   background-color: white;
@@ -41,9 +41,9 @@ export const WhoseToggleBox = styled.div`
 export const WhoseToggleButton = styled.div`
   width: 13rem;
   height: 4.7rem;
-  background-color: ${(props) => (props.isOn ? "#ffd058" : "white")};
+  background-color: ${(props) => (props.isOn ? "#FFC000" : "white")};
   color: ${(props) => (props.isOn ? "white" : "#A9ABB8")};
-  border-radius: 2rem;
+  border-radius: 1.5rem;
   font-size: 1.6rem;
   text-align: center;
   display: flex;
@@ -328,3 +328,15 @@ export const BigButtonWrapper = styled.div`
   margin: auto;
   bottom: 1rem;
 `;
+
+export const buttonContainer = styled.div`
+  position:absolute;  
+  top:76rem;
+  left:1.797rem;
+`
+
+export const itemContainer = styled.div`
+  margin-top:-1.5rem;
+  height: 60rem;
+  overflow-y:scroll;
+`

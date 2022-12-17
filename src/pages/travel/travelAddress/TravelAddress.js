@@ -37,9 +37,9 @@ const TravelAddress = () => {
         // }
         const options = {
       center: new kakao.maps.LatLng(33.400701, 126.570667),
-      level: 10,
+      level: 11,
     };
-    var markerImage = new kakao.maps.MarkerImage(markerImg, new kakao.maps.Size(64, 69), {offset: new kakao.maps.Point(27, 50)})
+    var markerImage = new kakao.maps.MarkerImage(markerImg, new kakao.maps.Size(30, 34.5), {offset: new kakao.maps.Point(17, 30)})
     const map = new kakao.maps.Map(container, options);
 
     for (var i = 0; i < LatList.length; i++) {
