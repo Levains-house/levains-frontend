@@ -1,8 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+	* {
+		margin: 0;
+	}
 	html {
-		font-size: 62.5%;
+		font-size: ${props => `${props.height /84.4 * 100}px`};
 	}
 `
 

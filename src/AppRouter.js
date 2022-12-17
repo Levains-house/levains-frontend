@@ -14,11 +14,11 @@ import Items from "./pages/items/Items";
 const AppRouter = () => {
   const setScreenSize = () => {
     let vh = window.innerHeight * 0.01;
-    document.documentElement.style.setProperty("--rem", `${vh}px`);
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
   }
   useEffect(() => {
     setScreenSize();
-    console.log("size run");
+    // console.log(window.innerHeight);
   });
   return (
     <div className="Approuter">
