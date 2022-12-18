@@ -46,7 +46,7 @@ export const nextButton = styled.button`
   border-style: solid;
 `;
 
-export const textHeader = styled.a`
+export const textHeader = styled.div`
   position: absolute;
   width: 36.5rem;
   height: 5.8rem;
@@ -140,7 +140,7 @@ export const nextText = styled.a`
   color: #ffffff;
 `;
 
-export const searchButton = styled.button`
+export const searchButton = styled.div`
   position:absolute;  
 
   // top: 1.1rem;
