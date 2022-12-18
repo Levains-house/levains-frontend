@@ -28,19 +28,16 @@ const SubTitle = styled.p`
   line-height: 0;
 `;
 const SelectBox = styled.div`
+  position:absolute;
   display: flex;
-  margin-top: 40rem;
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
   font-size: 2rem;
   /* color: #ffffff; */
-  left: 0;
-  right: 0;
-  margin: auto;
-  display: flex;
   justify-content: center;
-  margin-top: 20rem;
+  top: 37rem;
+  left: 5.5rem;
 `;
 export const msg = styled.p`
   line-height: 0rem;
@@ -129,7 +126,7 @@ text-align: left;
 
 position:absolute;
 height: 2.5rem;
-width: 19.5rem;
+width: 25rem;
 left: 2rem;
 top: 16.4rem;
 `
