@@ -35,7 +35,7 @@ const LocalAddress = () => {
       <S.textHeader>
         <S.a>{localStorage.getItem("username")}님,</S.a>
         <S.a>
-          여정을 위한 <S.Color>두번째</S.Color> 단계에요
+          여정을 위한 <S.Color>두번째</S.Color> 단계예요
         </S.a>
       <S.placeText>해당하는 곳을 선택해주세요</S.placeText>
       </S.textHeader>

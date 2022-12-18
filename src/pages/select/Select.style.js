@@ -34,6 +34,7 @@ const SelectBox = styled.div`
   font-style: normal;
   font-weight: 500;
   font-size: 2rem;
+  // line-height: 2.896rem;
   /* color: #ffffff; */
   justify-content: center;
   top: 37rem;
@@ -99,6 +100,7 @@ font-weight: 500;
 line-height: 2.9rem;
 letter-spacing: 0em;
 text-align: left;
+color: #3E404C;
 `
 export const secondLine = styled.a`
 position: absolute;
@@ -114,10 +116,12 @@ font-weight: 500;
 line-height: 2.9rem;
 letter-spacing: 0em;
 text-align: left;
+color: #3E404C;
 `
 
 export const thirdLine = styled.a`
-font-family: Inter;
+color: #3E404C;
+font-family: inter;
 font-size: 1.6rem;
 font-weight: 500;
 line-height: 1.9rem;
