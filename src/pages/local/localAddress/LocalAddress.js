@@ -15,26 +15,6 @@ const LocalAddress = () => {
   const [Lat, setLat] = useState(""); // 경도
   const [Long, setLong] = useState(""); // 위도
 
-  // const handleNextButton = async () => {
-  //   const response = await axios({
-  //     method: "post",
-  //     url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
-  //     headers: {
-  //       authorization: localStorage.getItem("accesstoken"),
-  //     },
-  //     data: {
-  //       address: [
-  //         {
-  //           latitude: Long,
-  //           longitude: Lat,
-  //         },
-  //       ],
-  //     },
-  //   });
-  //   console.log(response);
-  //   navigate("/items");
-  // };
-
   const [isGet, setGet] = useState(false);
   const postCodeStyle = {
     position: "absolute",
@@ -54,18 +34,29 @@ const LocalAddress = () => {
     <Wrapper>
       <S.textHeader>
         <S.a>{localStorage.getItem("username")}님,</S.a>
-
         <S.a>
           여정을 위한 <S.Color>두번째</S.Color> 단계에요
         </S.a>
-      </S.textHeader>
       <S.placeText>해당하는 곳을 선택해주세요</S.placeText>
+      </S.textHeader>
+
       <S.Image src={image} />
-      <S.searchBox></S.searchBox>
-      <S.ddot></S.ddot>
-      <S.roadText>
-        {isGet ? inputAddressValue : "도로명주소 검색하기"}
-      </S.roadText>
+
+      <S.searchBox onClick={() => {
+              setModalState(true);
+            }}>
+        <S.ddot></S.ddot>
+        <S.roadText>
+          {isGet ? inputAddressValue : "도로명주소 검색하기"}
+        </S.roadText>
+        <S.searchButton>
+          <S.glassImg
+            src={searchImage}
+            
+          />
+        </S.searchButton>
+      </S.searchBox>
+
       {isGet ? (
         <SetLatLong
           RoadAddr={inputAddressValue}
@@ -77,14 +68,7 @@ const LocalAddress = () => {
       ) : (
         <></>
       )}
-      <S.searchButton>
-        <S.glassImg
-          src={searchImage}
-          onClick={() => {
-            setModalState(true);
-          }}
-        />
-      </S.searchButton>
+      
       <DaumPostcode
         style={postCodeStyle}
         onComplete={onCompletePost}
