@@ -32,7 +32,7 @@ export const nextButton = styled.button`
   position: absolute;
   left: 2rem;
   right: 0%;
-  top: 72rem;
+  top: 76rem;
   background: #ffd54f;
   border-radius: 2rem;
   border-color: #ffffff;
@@ -51,7 +51,7 @@ export const textHeader = styled.a`
   width: 36.5rem;
   height: 5.8rem;
   left: 1.8rem;
-  top: 11rem;
+  top: 10rem;
 
   /* Mediam/sub M 20px */
 
@@ -71,8 +71,8 @@ export const placeText = styled.a`
   position: absolute;
   width: 19.3rem;
   height: 3.1rem;
-  left: 1.8rem;
-  top: 17.4rem;
+  left: 0rem;
+  top: 6.3rem;
 
   /* regular/body1 R 16px */
 
@@ -87,7 +87,7 @@ export const placeText = styled.a`
   color: #3e404c;
 `;
 
-export const searchBox = styled.div`
+export const searchBox = styled.button`
   box-sizing: border-box;
   width: 35rem;
   height: 4rem;
@@ -96,46 +96,43 @@ export const searchBox = styled.div`
   top: 38.4rem;
 
   background: #ffffff;
-  border: 0.2rem solid #f5f5f5;
+  border: 0.3rem solid #CDCED6;
   border-radius: 3rem;
+  display:flex;
+  align-items:center;
+  color: #3E404C;
 `;
 
 export const ddot = styled.div`
   width: 0.828rem;
   height: 0.8rem;
-  position: absolute;
-  top: 40rem;
-  left: 3.55rem;
   background: #d9d9d9;
   border-radius: 1rem;
+  margin-left:1.45rem;
 `;
 
 export const roadText = styled.span`
   //styleName: regular/body1 R 16px;
   font-family: Noto Sans KR;
-  font-size: 1.6rem;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 2.3rem;
+  line-height: 23px;
   letter-spacing: 0em;
   text-align: left;
-  position: absolute;
-  top: 39.3rem;
-  left: 5.517rem;
+  margin-left:1.139rem;
 `;
 
 export const nextText = styled.a`
   position: absolute;
   left: 17.1rem;
   top: 7.72rem;
-
+  
   font-family: "Noto Sans KR";
   font-style: normal;
   font-weight: 500;
   font-size: 1.8rem;
   line-height: 2.6rem;
-  /* identical to box height */
 
-  display: flex;
   align-items: center;
   text-align: center;
   letter-spacing: -0.028rem;
@@ -144,9 +141,10 @@ export const nextText = styled.a`
 `;
 
 export const searchButton = styled.button`
-  position: absolute;
-  left: 33.372rem;
-  top: 39.7rem;
+  position:absolute;  
+
+  // top: 1.1rem;
+  left:31.3rem;
   background: white;
   border: 5px;
   height: 1.481rem;
