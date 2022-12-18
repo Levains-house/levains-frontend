@@ -4,6 +4,7 @@ import axios from 'axios';
 const SearchList = (props) => {
     const [places, setPlaces] = useState(null);
     const fetchUsers = useCallback(async () => {
+      
         try {
           // 요청이 시작 할 때에는 error 와 places 를 초기화하고
           setPlaces(null);
