@@ -27,8 +27,8 @@ const TravelAddress = () => {
     return sum / len;
   };
 
-  var centerPos;
   useEffect(() => {
+    var centerPos;
     const container = document.getElementById("myMap");
     if (LatList.length === 0) {
         centerPos = new kakao.maps.LatLng(33.400701, 126.570667);
