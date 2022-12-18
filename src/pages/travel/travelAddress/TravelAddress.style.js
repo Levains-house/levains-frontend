@@ -79,16 +79,17 @@ export const searchBox = styled.div`
   height: 4rem;
   position: absolute;
   left: 2.1rem;
-  top: 39.7rem;
+  top: 40.5rem;
 
   background: #ffffff;
   border: 0.2rem solid #f5f5f5;
   border-radius: 3rem;
+
+  display:flex;
+  align-items:center;
 `;
 
 export const inputBox = styled.input`
-  position: absolute;
-  top: 39.7rem;
   font-family: Noto Sans KR;
   font-size: 1.6rem;
   font-weight: 400;
@@ -104,30 +105,15 @@ export const inputBox = styled.input`
 export const ddot = styled.div`
   width: 0.828rem;
   height: 0.8rem;
-  position: absolute;
-  top: 41.3rem;
-  left: 3.55rem;
+  margin-left:1.4rem;
+  margin-right:1.1rem;
   background: #d9d9d9;
   border-radius: 1rem;
 `;
 
-export const roadText = styled.span`
-  //styleName: regular/body1 R 16px;
-  font-family: Noto Sans KR;
-  font-size: 1.6rem;
-  font-weight: 400;
-  line-height: 2.3rem;
-  letter-spacing: 0em;
-  text-align: left;
-  position: absolute;
-  top: 39.3rem;
-  left: 5.517rem;
-`;
-
 export const searchButton = styled.button`
-  position: absolute;
-  left: 33.372rem;
-  top: 41rem;
+  position:absolute;
+  right:1.8rem;
   background: white;
   border: 5px;
   height: 1.481rem;
@@ -216,7 +202,7 @@ export const placeIcon = styled.img`
 
 export const resHolder = styled.div`
   position: absolute;
-  top: 45rem;
+  top: 46rem;
   width: 39rem;
   height: 28.1rem;
   overflow-y: scroll;

@@ -95,20 +95,21 @@ const TravelAddress = () => {
           position: "absolute",
         }}
       ></div>
-      <S.searchBox></S.searchBox>
-      <S.inputBox
-        placeholder="숙소 검색하기"
-        onChange={handleChange}
-      ></S.inputBox>
-      <S.ddot></S.ddot>
-      <S.searchButton>
-        <S.glassImg
-          src={searchImage}
-          onClick={() => {
-            setGet(true);
-          }}
-        ></S.glassImg>
-      </S.searchButton>
+      <S.searchBox>
+        <S.ddot></S.ddot>
+        <S.inputBox
+          placeholder="숙소 검색하기"
+          onChange={handleChange}
+        ></S.inputBox>
+        <S.searchButton>
+          <S.glassImg
+            src={searchImage}
+            onClick={() => {
+              setGet(true);
+            }}
+          ></S.glassImg>
+        </S.searchButton>
+      </S.searchBox>
       {isGet ? (
         <SearchList Keyword={Keyword} setPlace={setPlace}></SearchList>
       ) : (
