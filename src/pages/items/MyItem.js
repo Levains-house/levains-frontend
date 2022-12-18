@@ -48,7 +48,7 @@ const MyItem = () => {
     console.log(localStorage.getItem("accesstoken"));
     const response = await axios({
       method: "post",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/register",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/items/register",
       headers: {
         "Content-Type": "multipart/form-data",
         authorization: localStorage.getItem("accesstoken"),

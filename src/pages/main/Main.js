@@ -18,7 +18,7 @@ const Main = () => {
   const getHomeData = async () => {
     const response = await axios({
       method: "get",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/users",
       headers: {
         authorization: localStorage.getItem("accesstoken"),
       },
