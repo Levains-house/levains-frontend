@@ -17,9 +17,7 @@ const Select = () => {
   const navigate = useNavigate();
   
   const handleLocal = async () => {
-    // console.log(process.env.REACT_APP_BACKEND_URL)
     const response = await axios({
-
       method: "post",
       url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in",
       contentType: "application/json",
@@ -29,7 +27,7 @@ const Select = () => {
         role: "LOCAL",
       },
     });
-
+    
     localStorage.setItem("accesstoken", response.data.access_token);
     if (response.status === 201) {
       // console.log(response)

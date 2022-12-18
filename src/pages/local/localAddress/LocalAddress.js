@@ -6,6 +6,7 @@ import searchImage from "../../../assets/images/여행객/Union.svg";
 import { useNavigate } from "react-router";
 import SetLatLong from "../../../components/SetLatLong";
 import image from "../../../assets/images/localAddress.svg";
+import axios from "axios";
 
 const LocalAddress = () => {
   const [modalState, setModalState] = useState(false);
@@ -29,6 +30,22 @@ const LocalAddress = () => {
     setInputAddressValue(data.address);
     setGet(true);
   }; // onCompletePost 함수
+
+  
+  const handleNextButton = async () => {
+    const newArray = [{"latitude":Long, "longitude":Lat}];
+    
+    await axios({
+      method: "post",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in/address",
+      contentType: "application/json",
+      headers: { authorization: localStorage.getItem("accesstoken") },
+      data: {
+        address: newArray,
+      },
+    });
+    navigate("/items");
+  };
 
   return (
     <Wrapper>
@@ -75,7 +92,7 @@ const LocalAddress = () => {
       ></DaumPostcode>
       <S.nextButton
         onClick={() => {
-          navigate("/items");
+          handleNextButton();
         }}
       >
         다음으로
