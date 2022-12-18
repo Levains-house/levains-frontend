@@ -13,7 +13,7 @@ import imgLocal from "../../assets/images/selectLocal.png";
 import imgTravel from "../../assets/images/selectTravel.png";
 
 const Select = () => {
-  const [text, setText] = useRecoilState(userState);
+  const [text, ] = useRecoilState(userState);
   const navigate = useNavigate();
   const handleLocal = async () => {
     const response = await axios({
@@ -60,7 +60,7 @@ const Select = () => {
           <S.Title>
             <S.firstLine>만나서 반가워요 :&#41;</S.firstLine>
             <S.secondLine>
-              여정을 위한 <S.Color>첫번째</S.Color> 단계에요
+              여정을 위한 <S.Color>첫번째</S.Color> 단계예요
             </S.secondLine>
           </S.Title>
           <S.thirdLine>해당하는 곳을 선택해주세요</S.thirdLine>
