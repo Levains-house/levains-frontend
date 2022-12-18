@@ -19,9 +19,9 @@ const Select = () => {
   const handleLocal = async () => {
     // console.log(process.env.REACT_APP_BACKEND_URL)
     const response = await axios({
-      
+
       method: "post",
-      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in",
+      url: process.env.REACT_APP_BACKEND_URL,
       contentType: "application/json",
       data: {
         username: text.name,
