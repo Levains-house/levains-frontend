@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Wrapper from "../../../components/common/wrapper/Wrapper";
-import headerImage from "../../../assets/images/여행객/Vector.svg";
+// import headerImage from "../../../assets/images/여행객/Vector.svg";
 import searchImage from "../../../assets/images/여행객/Union.svg";
 import placeImage from "../../../assets/images/여행객/placeicon.svg";
 import * as S from "./TravelAddress.style";
@@ -78,7 +78,7 @@ const TravelAddress = () => {
   return (
     <Wrapper>
       <S.headerButton>
-        <S.headerImg src={headerImage}></S.headerImg>
+        {/* <S.headerImg src={headerImage}></S.headerImg> */}
       </S.headerButton>
       <S.textHeader1>{localStorage.getItem("username")}님,</S.textHeader1>
       <S.textHeader2>
