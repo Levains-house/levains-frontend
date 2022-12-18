@@ -12,7 +12,7 @@ const Mypage = () => {
   const getMyRebang = async () => {
     const response = await axios({
       method: "get",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/profiles",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/users/profiles",
       headers: {
         "Content-Type": "multipart/form-data",
         authorization: localStorage.getItem("accesstoken"),
@@ -27,7 +27,7 @@ const Mypage = () => {
   const handleItem = async (e) => {
     await axios({
       method: "put",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/items/status",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/items/status",
       headers: {
         authorization: localStorage.getItem("accesstoken"),
       },
