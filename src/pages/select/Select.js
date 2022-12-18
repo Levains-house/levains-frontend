@@ -21,7 +21,7 @@ const Select = () => {
     const response = await axios({
 
       method: "post",
-      url: process.env.REACT_APP_BACKEND_URL,
+      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in",
       contentType: "application/json",
       data: {
         username: text.name,
