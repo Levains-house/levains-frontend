@@ -11,6 +11,7 @@ const Home = () => {
   const [isBus, setBus] = useState(false);
   const [isCar, setCar] = useState(false);
   const [range, setRange] = useState(1.5);
+  const [loadingDone, setDone] = useState(false);
 
   const [users, setUsers] = useState(null);
 
@@ -31,6 +32,7 @@ const Home = () => {
       );
       setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
       console.log(response);
+      setDone(true);
     } catch (e) {
       console.log(e);
     }
@@ -85,7 +87,7 @@ const Home = () => {
       <S.lebangText>내가 찾던 바로 그 상품!</S.lebangText>
       <S.itemsContainer>
         {/* Map으로 뿌리기 */}
-        {
+        {loadingDone &&
           (users.category_items.map((item) => (
             <div style={{ marginLeft: "1.5rem" }}>
               <S.itemButton
@@ -128,7 +130,7 @@ const Home = () => {
 
       <S.lebangText2>여기 있어! 제주 체험</S.lebangText2>
       <S.resHolder>
-        {
+        {loadingDone &&
           (users.experience_items.map((item) => (
             <S.styledLi
               onClick={() => {
@@ -150,7 +152,7 @@ const Home = () => {
         {/* Map으로 뿌리기 */}
       </S.resHolder>
 
-      {
+      {loadingDone &&
         (users.category_items.map(
           (item) =>
             modalNum === item.item_id && (
