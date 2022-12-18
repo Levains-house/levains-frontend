@@ -63,7 +63,7 @@ const TravelAddress = () => {
     });
     await axios({
       method: "post",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in/address",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in/address",
       contentType: "application/json",
       headers: { authorization: localStorage.getItem("accesstoken") },
       data: {

@@ -15,10 +15,12 @@ import imgTravel from "../../assets/images/selectTravel.png";
 const Select = () => {
   const [text, ] = useRecoilState(userState);
   const navigate = useNavigate();
+  
   const handleLocal = async () => {
+    // console.log(process.env.REACT_APP_BACKEND_URL)
     const response = await axios({
       method: "post",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in",
       contentType: "application/json",
       data: {
         username: text.name,
@@ -29,6 +31,7 @@ const Select = () => {
 
     localStorage.setItem("accesstoken", response.data.access_token);
     if (response.status === 201) {
+      // console.log(response)
       navigate("/local_address");
     } else {
       navigate("/main");
@@ -39,7 +42,7 @@ const Select = () => {
   const handleTravel = async () => {
     const response = await axios({
       method: "post",
-      url: "http://levains-lb-2013408822.ap-northeast-2.elb.amazonaws.com/api/users/sign-in",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in",
       data: {
         username: text.name,
         kakao_talk_chatting_url: text.url,
