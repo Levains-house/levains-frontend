@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import LocalAddress from "./pages/local/localAddress/LocalAddress";
 import LocalItems from "./pages/local/localItems/LocalItems";
@@ -10,7 +10,16 @@ import TravelItems from "./pages/travel/travelItems/TravelItems";
 import { RecoilRoot } from "recoil";
 import Items from "./pages/items/Items";
 
+
 const AppRouter = () => {
+  const setScreenSize = () => {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  useEffect(() => {
+    setScreenSize();
+    // console.log(window.innerHeight);
+  });
   return (
     <div className="Approuter">
       <RecoilRoot>

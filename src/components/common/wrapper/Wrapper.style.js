@@ -7,7 +7,7 @@ const Wrapper = styled.div`
   margin: auto;
   background-color: #faf9f9;
 
-  margin-top: 4.7rem;
+  // margin-top: 4.7rem;
   position: relative;
 
   overflow-y: scroll;

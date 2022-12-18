@@ -37,9 +37,9 @@ const TravelAddress = () => {
         // }
         const options = {
       center: new kakao.maps.LatLng(33.400701, 126.570667),
-      level: 10,
+      level: 11,
     };
-    var markerImage = new kakao.maps.MarkerImage(markerImg, new kakao.maps.Size(64, 69), {offset: new kakao.maps.Point(27, 50)})
+    var markerImage = new kakao.maps.MarkerImage(markerImg, new kakao.maps.Size(30, 34.5), {offset: new kakao.maps.Point(17, 30)})
     const map = new kakao.maps.Map(container, options);
 
     for (var i = 0; i < LatList.length; i++) {
@@ -82,7 +82,7 @@ const TravelAddress = () => {
       </S.headerButton>
       <S.textHeader1>{localStorage.getItem("username")}님,</S.textHeader1>
       <S.textHeader2>
-        만남을 위한&nbsp;<text style={{ color: "#86C3C7" }}>두번째 단계</text>
+        만남을 위한&nbsp;<text style={{ color: "#78A484" }}>두번째 단계</text>
         &nbsp;입니다.
       </S.textHeader2>
       <S.placeText>머무르는 숙소를 추가해주세요.</S.placeText>
@@ -91,7 +91,7 @@ const TravelAddress = () => {
         style={{
           width: "39.3rem",
           height: "17.4rem",
-          top: "20.5rem",
+          top: "21.5rem",
           position: "absolute",
         }}
       ></div>

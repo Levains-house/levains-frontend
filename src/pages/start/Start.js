@@ -16,7 +16,7 @@ const Start = () => {
       name: e.target.value,
     });
   };
-  const setText = useRecoilState(userState).setText;
+  const [, setText] = useRecoilState(userState);
   const handleButton = () => {
     setText({ name: inputState.name, url: inputState.url });
     localStorage.setItem("username", inputState.name);
@@ -43,13 +43,13 @@ const Start = () => {
             placeholder="카카오톡 오픈채팅방 URL을 입력해주세요"
             onChange={handleInputUrl}
           />
-        </S.InputBox>
-      </Wrapper>
       <S.ButtonBox>
         <BigButton size="long" handleButton={handleButton}>
           따뜻한 여정 시작하기
         </BigButton>
       </S.ButtonBox>
+        </S.InputBox>
+      </Wrapper>
     </>
   );
 };

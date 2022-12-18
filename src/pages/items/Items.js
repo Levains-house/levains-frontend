@@ -54,6 +54,8 @@ const Items = () => {
             </S.WhoseToggleButton>
           </S.WhoseToggleBox>
           {/* 컴포넌트 분리 */}
+          <S.itemContainer>
+
           {whoseToggleState === "my" && (
             <>
               <MyItem />
@@ -64,8 +66,8 @@ const Items = () => {
               <MyItem />
               <MyItem />
               <MyItem />
-            </>
-          )}
+              </>
+              )}
           {whoseToggleState === "your" && (
             <>
               <YourItem />
@@ -77,11 +79,15 @@ const Items = () => {
               <YourItem />
             </>
           )}
+          </S.itemContainer>
         </S.WrapperInner>
-      </Wrapper>
-      <BigButton size="long" handleButton={handleNextButton}>
-        다음으로
-      </BigButton>
+        <S.buttonContainer>
+          <BigButton size="long" handleButton={handleNextButton}>
+            다음으로
+          </BigButton>
+        </S.buttonContainer>
+        </Wrapper>
+      
     </>
   );
 };

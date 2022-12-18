@@ -52,7 +52,7 @@ const Main = () => {
         <>
           <S.headerText>{localStorage.getItem("username")}님,</S.headerText>
           <S.headerText2>
-            <text style={{ color: "#86C3C7" }}>나의 주멍</text>
+            <text style={{ color: "#78A484" }}>나의 주멍</text>
             &nbsp;확인해보세요!
           </S.headerText2>
           <Mypage />
