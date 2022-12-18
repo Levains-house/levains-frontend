@@ -10,7 +10,7 @@ const SearchList = (props) => {
           const response = await axios.get(
             'https://dapi.kakao.com/v2/local/search/keyword.json?sort=accuracy&page=1&size=10&category_group_code=AD5&query=제주+'+props.Keyword+'&category_group_code=AD5', {
             headers: {
-                'Authorization': "KakaoAK b4b6ab56893dc911f31bd7af9e63545f"
+                'Authorization': process.env.REACT_APP_KAKAOMAP_API
             },}
           );
           setPlaces(response.data); // 데이터는 response.data 안에 들어있습니다.
