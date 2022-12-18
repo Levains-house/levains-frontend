@@ -15,28 +15,28 @@ const TravelAddress = () => {
   const [isGet, setGet] = useState(false);
   const [LatList, pushLat] = useState([]);
   const [LongList, pushLong] = useState([]);
-  // console.log(LatList, LongList);
+  
   const navigate = useNavigate();
   
-  // const getAVG = (arr) => {
-  //   var sum = 0;
-  //   var len = arr.length;
-  //   for (var i = 0; i < len; i++) {
-  //     sum += arr[i];
-  //   }
-  //   return sum / len;
-  // };
+  const getAVG = (arr) => {
+    var sum = 0;
+    var len = arr.length;
+    for (var i = 0; i < len; i++) {
+      sum += parseFloat(arr[i]);
+    }
+    return sum / len;
+  };
 
-
+  var centerPos;
   useEffect(() => {
     const container = document.getElementById("myMap");
-    // if (LatList.length === 0) {
-      //   centerPos = new kakao.maps.LatLng(33.450701, 126.570667);
-      // } else {
-        //   centerPos = new kakao.maps.LatLng(getAVG(LatList), getAVG(LongList));
-        // }
-        const options = {
-      center: new kakao.maps.LatLng(33.400701, 126.570667),
+    if (LatList.length === 0) {
+        centerPos = new kakao.maps.LatLng(33.400701, 126.570667);
+      } else {
+        centerPos = new kakao.maps.LatLng(getAVG(LatList), getAVG(LongList));
+      }
+      const options = {
+      center: centerPos,
       level: 11,
     };
     var markerImage = new kakao.maps.MarkerImage(markerImg, new kakao.maps.Size(30, 34.5), {offset: new kakao.maps.Point(17, 30)})
