@@ -88,7 +88,7 @@ const Home = () => {
       <S.itemsContainer>
         {/* Map으로 뿌리기 */}
         {loadingDone &&
-          (users.category_items.map((item) => (
+          (users.recommend_and_opposite_wanted_items.map((item) => (
             <div style={{ marginLeft: "1.5rem" }}>
               <S.itemButton
                 style={{ flexDirection: "column" }}
