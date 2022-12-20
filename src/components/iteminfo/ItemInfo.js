@@ -1,6 +1,6 @@
 import React from "react";
-import * as S from "./ItemInfo.style";
-import cateMap from "./categoryMap.json";
+import * as S from "../../pages/home/ItemInfo.style";
+import cateMap from "../../pages/home/categoryMap.json";
 import itemSameImg from "../../assets/images/itemInfoSame.png";
 
 const ItemInfo = (props) => {
