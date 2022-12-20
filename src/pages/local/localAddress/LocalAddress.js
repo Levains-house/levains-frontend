@@ -37,7 +37,7 @@ const LocalAddress = () => {
     
     await axios({
       method: "post",
-      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in/address",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/address",
       contentType: "application/json",
       headers: { authorization: localStorage.getItem("accesstoken") },
       data: {
