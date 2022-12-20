@@ -17,7 +17,7 @@ export const idText = styled.span`
   color: #ffffff;
 `;
 
-export const exitButton = styled.button`
+export const exitButton = styled.div`
   position: absolute;
   width: 3rem;
   height: 3rem;
@@ -335,7 +335,7 @@ export const zzimText = styled.span`
   color: #ffc000;
 `;
 
-export const chatButton = styled.button`
+export const chatButton = styled.div`
   box-sizing: border-box;
 
   position: absolute;

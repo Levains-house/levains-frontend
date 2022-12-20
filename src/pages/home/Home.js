@@ -31,10 +31,10 @@ const Home = () => {
         }
       );
       setUsers(response.data); // 데이터는 response.data 안에 들어있습니다.
-      console.log(response);
+      // console.log(response);
       setDone(true);
     } catch (e) {
-      console.log(e);
+      // console.log(e);
     }
   },
   [range]
@@ -45,7 +45,7 @@ const Home = () => {
   }, [fetchUsers, isWalk, isBus, isCar]);
 
   if (!users) {
-    console.log("error");
+    // console.log("error");
     return null;
   }
   return (
@@ -86,14 +86,14 @@ const Home = () => {
       </S.carButton>
       <S.lebangText>내가 찾던 바로 그 상품!</S.lebangText>
       <S.itemsContainer>
-        {/* Map으로 뿌리기 */}
         {loadingDone &&
           (users.recommend_and_opposite_wanted_items.map((item) => (
-            <div style={{ marginLeft: "1.5rem" }}>
+            <div key={item.item_id + 10000} style={{ marginLeft: "1.5rem" }}>
               <S.itemButton
                 style={{ flexDirection: "column" }}
                 onClick={() => {
                   console.log("push");
+                  console.log(modalNum);
                   setModalNum(item.item_id); // item_id
                 }}
               >
@@ -109,23 +109,6 @@ const Home = () => {
             </div>
           )))
         }
-
-        {/* <div style={{marginLeft:"1.5rem"}}>
-      <S.itemButton 
-      style={{flexDirection:'column'}}
-      onClick={()=>{
-        console.log("push");
-        setModalNum(1); // item_id
-      }}>
-        <S.itemImg src={itemImage}></S.itemImg>
-        <S.itemText>셀린느 미디엄 버티컬 블랙</S.itemText>
-        <S.iconContainer>
-        <S.sameButton><S.sameImg src={sameImage}></S.sameImg></S.sameButton>
-          <S.category>육아용품</S.category>
-        </S.iconContainer>
-      </S.itemButton>
-      </div>
-       */}
       </S.itemsContainer>
 
       <S.lebangText2>여기 있어! 제주 체험</S.lebangText2>
@@ -133,6 +116,7 @@ const Home = () => {
         {loadingDone && !users &&
           (users.experience_items.map((item) => (
             <S.styledLi
+              key={item.item_id + 20000}
               onClick={() => {
                 console.log("push");
                 setModalNum(item.item_id); // item_id
@@ -148,15 +132,14 @@ const Home = () => {
             </S.styledLi>
           )))
         }
-
-        {/* Map으로 뿌리기 */}
       </S.resHolder>
 
-      {loadingDone && !users && 
-        (users.category_items.map(
-          (item) =>
-            (modalNum === item.item_id) && (
+      {/* {loadingDone && !users &&
+        users.map((item_category)=>
+          item_category.map(
+            (item) => 
               <ItemInfo
+                key={item.item_id + 30000}
                 item_id={item.item_id}
                 img_url={item.img_url}
                 name={item.name}
@@ -169,16 +152,38 @@ const Home = () => {
                 setModalNum={setModalNum}
                 isItem={true}
               />
-            )
+            
           )
         )
+      } */}
+      
+      {
+        users.recommend_and_opposite_wanted_items.map(
+          (item) =>(
+              (modalNum === item.item_id) && 
+              <ItemInfo
+                key={item.item_id + 30000}
+                item_id={item.item_id}
+                img_url={item.img_url}
+                name={item.name}
+                description={item.description}
+                category={item.category}
+                kakao_talk_chatting_url={item.kakao_talk_chatting_url}
+                want_name={item.want_name}
+                want_description={item.want_description}
+                want_category={item.want_category}
+                setModalNum={setModalNum}
+                isItem={true}
+              />)
+          )
       }
 
-      {loadingDone && !users && 
-        (users.experience_items.map(
-          (item) => 
-            (modalNum === item.item_id) && (
+      {
+        users.experience_items.map(
+          (item) => (
+              (modalNum === item.item_id) && 
               <ItemInfo
+                key={item.item_id + 40000}
                 item_id={item.item_id}
                 img_url={item.img_url}
                 name={item.name}
@@ -190,12 +195,10 @@ const Home = () => {
                 want_category={"no"}
                 setModalNum={setModalNum}
                 isItem={false}
-              />
-            )
+              />)
           )
-        )
       }
-      {/* {(modalNum === 1) && <ItemInfo item_id={"1"} img_url={"img_url"} name={"name"} description={"des"} category={"cate"} kakao_talk_chatting_url={"chat url"} setModalNum={setModalNum} />} */}
+      {/* {(modalNum === 87) && <ItemInfo item_id={"1"} img_url={"img_url"} name={"name"} description={"des"} category={"cate"} kakao_talk_chatting_url={"chat url"} setModalNum={setModalNum} />} */}
       {/* {(modalNum === 2) && <ItemInfo item_id={"2"} img_url={"img_url"} name={"name"} description={"des"} category={"cate"} kakao_talk_chatting_url={"chat url"} setModalNum={setModalNum} />} */}
     </>
   );
