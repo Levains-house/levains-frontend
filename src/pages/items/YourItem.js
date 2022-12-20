@@ -31,7 +31,7 @@ const YourItem = () => {
     formData.append("purpose", "WANT");
     const response = await axios({
       method: "post",
-      url: process.env.REACT_APP_BACKEND_URL+"/api/items/register",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/items/",
       headers: {
         "Content-Type": "multipart/form-data",
         authorization: localStorage.getItem("accesstoken"),
