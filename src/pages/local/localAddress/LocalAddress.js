@@ -33,7 +33,7 @@ const LocalAddress = () => {
 
   
   const handleNextButton = async () => {
-    const newArray = [{"latitude":Long, "longitude":Lat}];
+    const newArray = [{"latitude":parseFloat(Long), "longitude":parseFloat(Lat)}];
     
     await axios({
       method: "post",
