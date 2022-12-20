@@ -22,7 +22,7 @@ const Home = () => {
       setUsers(null);
       //   axios.defaults.headers.get['header1'] = "";
       const response = await axios.get(
-        process.env.REACT_APP_BACKEND_URL+"/api/users?range=" +
+        process.env.REACT_APP_BACKEND_URL+"/api/items?range=" +
           String(range),
         {
           headers: {
