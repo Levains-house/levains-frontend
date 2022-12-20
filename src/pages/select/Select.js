@@ -23,7 +23,7 @@ const Select = () => {
         username: text.name,
         kakao_talk_chatting_url: text.url,
         role: "LOCAL",
-      },
+      }, 
       headers: { contentType: "application/json" },
     });
     localStorage.setItem("accesstoken", res.data.access_token);
