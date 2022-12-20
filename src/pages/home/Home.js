@@ -130,7 +130,7 @@ const Home = () => {
 
       <S.lebangText2>여기 있어! 제주 체험</S.lebangText2>
       <S.resHolder>
-        {loadingDone &&
+        {loadingDone && !users &&
           (users.experience_items.map((item) => (
             <S.styledLi
               onClick={() => {
@@ -152,7 +152,7 @@ const Home = () => {
         {/* Map으로 뿌리기 */}
       </S.resHolder>
 
-      {loadingDone &&
+      {loadingDone && !users && 
         (users.category_items.map(
           (item) =>
             modalNum === item.item_id && (
@@ -174,7 +174,7 @@ const Home = () => {
         )
       }
 
-      {
+      {!users && 
         (users.experience_items.map(
           (item) => 
             modalNum === item.item_id && (
