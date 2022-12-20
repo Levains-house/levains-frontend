@@ -59,7 +59,7 @@ const TravelAddress = () => {
   const handleNextButton = async () => {
     const newArray = [];
     LatList.forEach((it, i) => {
-      newArray.push({ latitude: LatList[i], longitude: LongList[i] });
+      newArray.push({ latitude: parseFloat(LatList[i]), longitude: parseFloat(LongList[i]) });
     });
     await axios({
       method: "post",

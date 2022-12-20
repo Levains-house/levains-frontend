@@ -74,6 +74,11 @@ const LocalAddress = () => {
         </S.searchButton>
       </S.searchBox>
 
+      <DaumPostcode
+        style={postCodeStyle}
+        onComplete={onCompletePost}
+      ></DaumPostcode>
+
       {isGet ? (
         <SetLatLong
           RoadAddr={inputAddressValue}
@@ -85,11 +90,7 @@ const LocalAddress = () => {
       ) : (
         <></>
       )}
-      
-      <DaumPostcode
-        style={postCodeStyle}
-        onComplete={onCompletePost}
-      ></DaumPostcode>
+
       <S.nextButton
         onClick={() => {
           handleNextButton();
