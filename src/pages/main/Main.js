@@ -15,23 +15,23 @@ const Main = () => {
   const [categoryItem, setCategoryItem] = useState([]);
   const [experienceItem, setExperienceItem] = useState([]);
   const naviagte = useNavigate();
-  const getHomeData = async () => {
-    const response = await axios({
-      method: "get",
-      url: process.env.REACT_APP_BACKEND_URL+"/api/users",
-      headers: {
-        authorization: localStorage.getItem("accesstoken"),
-      },
-    });
-    setCategoryItem(response.data.category_items);
-    setExperienceItem(response.data.experience_items);
-    console.log(response.data);
-  };
+  // const getHomeData = async () => {
+  //   const response = await axios({
+  //     method: "get",
+  //     url: process.env.REACT_APP_BACKEND_URL+"/api/users",
+  //     headers: {
+  //       authorization: localStorage.getItem("accesstoken"),
+  //     },
+  //   });
+  //   setCategoryItem(response.data.category_items);
+  //   setExperienceItem(response.data.experience_items);
+  //   console.log(response.data);
+  // };
 
-  useEffect(() => {
-    getHomeData();
-  }, []);
-  console.log(categoryItem, experienceItem);
+  // useEffect(() => {
+  //   getHomeData();
+  // }, []);
+  // console.log(categoryItem, experienceItem);
   return (
     <Wrapper>
       <S.headerWhiteBox></S.headerWhiteBox>
