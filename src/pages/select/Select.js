@@ -17,25 +17,42 @@ const Select = () => {
   const navigate = useNavigate();
   
   const handleLocal = async () => {
-    const response = await axios({
+    const res = await fetch(process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in", {
       method: "post",
-      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in",
-      contentType: "application/json",
-      data: {
+      body:{
         username: text.name,
         kakao_talk_chatting_url: text.url,
         role: "LOCAL",
       },
+      headers: { contentType: "application/json" },
     });
-    
-    localStorage.setItem("accesstoken", response.data.access_token);
+    localStorage.setItem("accesstoken", res.data.access_token);
     if (response.status === 201) {
-      // console.log(response)
       navigate("/local_address");
-    } else {
+    } else if (response.status === 200){
       navigate("/main");
+    } else{
+      console.log(res);
     }
-    //
+
+    // const response = await axios({
+    //   method: "post",
+    //   url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in",
+    //   contentType: "application/json",
+    //   data: {
+    //     username: text.name,
+    //     kakao_talk_chatting_url: text.url,
+    //     role: "LOCAL",
+    //   },
+    // });
+    
+    // localStorage.setItem("accesstoken", response.data.access_token);
+    // if (response.status === 201) {
+    //   // console.log(response)
+    //   navigate("/local_address");
+    // } else {
+    //   navigate("/main");
+    // }
   };
 
   const handleTravel = async () => {
