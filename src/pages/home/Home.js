@@ -155,7 +155,7 @@ const Home = () => {
       {loadingDone && !users && 
         (users.category_items.map(
           (item) =>
-            modalNum === item.item_id && (
+            {(modalNum === item.item_id) && (
               <ItemInfo
                 item_id={item.item_id}
                 img_url={item.img_url}
@@ -169,7 +169,7 @@ const Home = () => {
                 setModalNum={setModalNum}
                 isItem={true}
               />
-            )
+            )}
           )
         )
       }
@@ -177,7 +177,7 @@ const Home = () => {
       {!users && 
         (users.experience_items.map(
           (item) => 
-            modalNum === item.item_id && (
+            {(modalNum === item.item_id) && (
               <ItemInfo
                 item_id={item.item_id}
                 img_url={item.img_url}
@@ -191,7 +191,7 @@ const Home = () => {
                 setModalNum={setModalNum}
                 isItem={false}
               />
-            )
+            )}
           )
         )
       }
