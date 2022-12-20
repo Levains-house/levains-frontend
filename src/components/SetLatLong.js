@@ -40,7 +40,8 @@ const SetLatLong = (props) => {
     // props.setLong(users.documents[0].y);
     return(
       <>
-      {props.setLat(users.documents[0].x) && props.setLong(users.documents[0].y)}
+      {props.setLat(users.documents[0].x)}
+      {props.setLong(users.documents[0].y)}
       </>
     )
 }
