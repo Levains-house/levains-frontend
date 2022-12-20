@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import axios from 'axios';
 
 const SetLatLong = (props) => {
@@ -27,12 +27,12 @@ const SetLatLong = (props) => {
         setLoading(false);
     };
 
-    // useEffect(() => {
-    //     fetchUsers();
-    // }, []);
+    useEffect(() => {
+        fetchUsers();
+    });
     
-    if (loading) return <div>로딩중..</div>; 
-    if (error) return <div>에러가 발생했습니다</div>;
+    // if (loading) return <div>로딩중..</div>; 
+    // if (error) return <div>에러가 발생했습니다</div>;
     
     if (!users) return null;
 
@@ -40,7 +40,8 @@ const SetLatLong = (props) => {
     // props.setLong(users.documents[0].y);
     return(
       <>
-      {fetchUsers && props.setLat(users.documents[0].x) && props.setLong(users.documents[0].y)}
+      {props.setLat(users.documents[0].x)}
+      {props.setLong(users.documents[0].y)}
       </>
     )
 }

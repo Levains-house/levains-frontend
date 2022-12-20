@@ -33,11 +33,11 @@ const LocalAddress = () => {
 
   
   const handleNextButton = async () => {
-    const newArray = [{"latitude":Long, "longitude":Lat}];
+    const newArray = [{"latitude":parseFloat(Long), "longitude":parseFloat(Lat)}];
     
     await axios({
       method: "post",
-      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in/address",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/address",
       contentType: "application/json",
       headers: { authorization: localStorage.getItem("accesstoken") },
       data: {
@@ -74,6 +74,11 @@ const LocalAddress = () => {
         </S.searchButton>
       </S.searchBox>
 
+      <DaumPostcode
+        style={postCodeStyle}
+        onComplete={onCompletePost}
+      ></DaumPostcode>
+
       {isGet ? (
         <SetLatLong
           RoadAddr={inputAddressValue}
@@ -85,11 +90,7 @@ const LocalAddress = () => {
       ) : (
         <></>
       )}
-      
-      <DaumPostcode
-        style={postCodeStyle}
-        onComplete={onCompletePost}
-      ></DaumPostcode>
+
       <S.nextButton
         onClick={() => {
           handleNextButton();

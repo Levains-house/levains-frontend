@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Wrapper from "../../components/common/wrapper/Wrapper";
 import * as S from "./Main.style";
 import headerImage from "../../assets/images/여행객/Vector.svg";
@@ -6,32 +6,32 @@ import homeImage from "../../assets/images/homeicon.png";
 import levainImage from "../../assets/images/levainicon.png";
 import Home from "../home/Home";
 import Mypage from "../myPage/Mypage";
-import axios from "axios";
+// import axios from "axios";
 import add from "../../assets/images/add.png";
 import { useNavigate } from "react-router";
 
 const Main = () => {
   const [isHome, Toggle] = useState(true);
-  const [categoryItem, setCategoryItem] = useState([]);
-  const [experienceItem, setExperienceItem] = useState([]);
+  // const [categoryItem, setCategoryItem] = useState([]);
+  // const [experienceItem, setExperienceItem] = useState([]);
   const naviagte = useNavigate();
-  const getHomeData = async () => {
-    const response = await axios({
-      method: "get",
-      url: process.env.REACT_APP_BACKEND_URL+"/api/users",
-      headers: {
-        authorization: localStorage.getItem("accesstoken"),
-      },
-    });
-    setCategoryItem(response.data.category_items);
-    setExperienceItem(response.data.experience_items);
-    console.log(response.data);
-  };
+  // const getHomeData = async () => {
+  //   const response = await axios({
+  //     method: "get",
+  //     url: process.env.REACT_APP_BACKEND_URL+"/api/users",
+  //     headers: {
+  //       authorization: localStorage.getItem("accesstoken"),
+  //     },
+  //   });
+  //   setCategoryItem(response.data.category_items);
+  //   setExperienceItem(response.data.experience_items);
+  //   console.log(response.data);
+  // };
 
-  useEffect(() => {
-    getHomeData();
-  }, []);
-  console.log(categoryItem, experienceItem);
+  // useEffect(() => {
+  //   getHomeData();
+  // }, []);
+  // console.log(categoryItem, experienceItem);
   return (
     <Wrapper>
       <S.headerWhiteBox></S.headerWhiteBox>

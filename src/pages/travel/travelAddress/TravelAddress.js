@@ -59,11 +59,11 @@ const TravelAddress = () => {
   const handleNextButton = async () => {
     const newArray = [];
     LatList.forEach((it, i) => {
-      newArray.push({ latitude: LatList[i], longitude: LongList[i] });
+      newArray.push({ latitude: parseFloat(LatList[i]), longitude: parseFloat(LongList[i]) });
     });
     await axios({
       method: "post",
-      url: process.env.REACT_APP_BACKEND_URL+"/api/users/sign-in/address",
+      url: process.env.REACT_APP_BACKEND_URL+"/api/address",
       contentType: "application/json",
       headers: { authorization: localStorage.getItem("accesstoken") },
       data: {
