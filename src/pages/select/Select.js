@@ -27,9 +27,9 @@ const Select = () => {
       headers: { contentType: "application/json" },
     });
     localStorage.setItem("accesstoken", res.data.access_token);
-    if (response.status === 201) {
+    if (res.status === 201) {
       navigate("/local_address");
-    } else if (response.status === 200){
+    } else if (res.status === 200){
       navigate("/main");
     } else{
       console.log(res);
