@@ -13,65 +13,6 @@ export const headerImg = styled.img`
   height: 1.481rem;
   width: 1.534rem;
 `;
-export const textHeader1 = styled.a`
-  position: absolute;
-  width: 36.5rem;
-  height: 2.9rem;
-  left: 1.8rem;
-  top: 11rem;
-
-  /* Mediam/sub M 20px */
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.9rem;
-  display: flex;
-  align-items: center;
-
-  color: #000000;
-`;
-
-export const textHeader2 = styled.a`
-  position: absolute;
-  width: 26.9rem;
-  height: 2.9rem;
-  left: 1.8rem;
-  top: 13.9rem;
-
-  /* Mediam/sub M 20px */
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.9rem;
-  /* identical to box height */
-
-  display: flex;
-  align-items: center;
-`;
-
-export const placeText = styled.a`
-  position: absolute;
-  // width: 19.3rem;
-  height: 3.1rem;
-  left: 1.8rem;
-  top: 17.4rem;
-
-  /* regular/body1 R 16px */
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 1.6rem;
-  line-height: 2.3rem;
-  display: flex;
-  align-items: center;
-
-  color: #3e404c;
-`;
 
 export const searchBox = styled.div`
   box-sizing: border-box;
@@ -79,10 +20,10 @@ export const searchBox = styled.div`
   height: 4rem;
   position: absolute;
   left: 2.1rem;
-  top: 40.5rem;
+  top: 39.7rem;
 
   background: #ffffff;
-  border: 0.2rem solid #f5f5f5;
+  border: 0.1rem solid #CDCED6;
   border-radius: 3rem;
 
   display:flex;
@@ -125,32 +66,11 @@ export const glassImg = styled.img`
   width: 1.534rem;
 `;
 
-export const nextButton = styled.button`
-  width: 35rem;
-  height: 5rem;
-
-  position: absolute;
-  left: 2rem;
-  right: 0%;
-  top: 76rem;
-  background: #ffd54f;
-  border-radius: 2rem;
-  border-color: #ffffff;
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 1.8rem;
-  line-height: 2.6rem;
-  color: #ffffff;
-  border-style: solid;
-`;
-
 export const placeBox = styled.div`
   background: #ffffff;
   /* gray scale/gray1 */
 
-  border: 0.1rem solid #e1e1e8;
+  border: 0.1rem solid #E1E1E8;
   border-radius: 2rem;
   width: 35rem;
   height: 6.7rem;
@@ -202,7 +122,7 @@ export const placeIcon = styled.img`
 
 export const resHolder = styled.div`
   position: absolute;
-  top: 46rem;
+  top: 45rem;
   width: 39rem;
   height: 28.1rem;
   overflow-y: scroll;

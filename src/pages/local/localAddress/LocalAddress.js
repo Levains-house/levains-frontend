@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import Wrapper from "../../../components/common/wrapper/Wrapper";
 import * as S from "./LocalAddress.style";
+import * as G from "../../../components/common/header/header.style"
 import DaumPostcode from "react-daum-postcode";
 import searchImage from "../../../assets/images/여행객/Union.svg";
 import { useNavigate } from "react-router";
 import SetLatLong from "../../../components/SetLatLong";
 import image from "../../../assets/images/localAddress.svg";
 import axios from "axios";
+import BigButton from "../../../components/common/button/BigButton/BigButton";
 
 const LocalAddress = () => {
   const [modalState, setModalState] = useState(false);
@@ -49,28 +51,25 @@ const LocalAddress = () => {
 
   return (
     <Wrapper>
-      <S.textHeader>
-        <S.a>{localStorage.getItem("username")}님,</S.a>
-        <S.a>
-          여정을 위한 <S.Color>두번째</S.Color> 단계예요
-        </S.a>
-      <S.placeText>해당하는 곳을 선택해주세요</S.placeText>
-      </S.textHeader>
+      <G.HeaderBox>
+        <G.Title>
+          <G.firstLine>{localStorage.getItem("username")}님,</G.firstLine>
+          <G.secondLine>
+            여정을 위한 <G.Color>두번째</G.Color> 단계예요.
+          </G.secondLine>
+        </G.Title>
+        <G.thirdLine>해당하는 곳을 선택해주세요.</G.thirdLine>
+      </G.HeaderBox>
 
       <S.Image src={image} />
 
-      <S.searchBox onClick={() => {
-              setModalState(true);
-            }}>
+      <S.searchBox onClick={() => { setModalState(true); }}>
         <S.ddot></S.ddot>
         <S.roadText>
           {isGet ? inputAddressValue : "도로명주소 검색하기"}
         </S.roadText>
         <S.searchButton>
-          <S.glassImg
-            src={searchImage}
-            
-          />
+          <S.glassImg src={searchImage} />
         </S.searchButton>
       </S.searchBox>
 
@@ -90,14 +89,9 @@ const LocalAddress = () => {
       ) : (
         <></>
       )}
-
-      <S.nextButton
-        onClick={() => {
-          handleNextButton();
-        }}
-      >
+      <BigButton size="long" handleButton={handleNextButton}>
         다음으로
-      </S.nextButton>
+      </BigButton>
     </Wrapper>
   );
 };

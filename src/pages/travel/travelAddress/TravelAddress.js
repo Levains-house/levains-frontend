@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import Wrapper from "../../../components/common/wrapper/Wrapper";
-// import headerImage from "../../../assets/images/여행객/Vector.svg";
 import searchImage from "../../../assets/images/여행객/Union.svg";
 import placeImage from "../../../assets/images/여행객/placeicon.svg";
 import * as S from "./TravelAddress.style";
+import * as G from "../../../components/common/header/header.style"
 import SearchList from "../../../components/SearchList";
 import { useNavigate } from "react-router";
 import axios from "axios";
 import markerImg from '../../../assets/images/marker.png'
+import BigButton from "../../../components/common/button/BigButton/BigButton";
 const { kakao } = window;
 
 const TravelAddress = () => {
@@ -80,18 +81,21 @@ const TravelAddress = () => {
       <S.headerButton>
         {/* <S.headerImg src={headerImage}></S.headerImg> */}
       </S.headerButton>
-      <S.textHeader1>{localStorage.getItem("username")}님,</S.textHeader1>
-      <S.textHeader2>
-        만남을 위한&nbsp;<text style={{ color: "#78A484" }}>두번째 단계</text>
-        &nbsp;입니다.
-      </S.textHeader2>
-      <S.placeText>머무르는 숙소를 추가해주세요.</S.placeText>
+      <G.HeaderBox>
+        <G.Title>
+          <G.firstLine>{localStorage.getItem("username")}님,</G.firstLine>
+          <G.secondLine>
+            만남을 위한 <G.Color>두번째 단계</G.Color> 입니다.
+          </G.secondLine>
+        </G.Title>
+        <G.thirdLine>머무르는 숙소를 추가해주세요.</G.thirdLine>
+      </G.HeaderBox>
       <div
         id="myMap"
         style={{
           width: "39.3rem",
           height: "17.4rem",
-          top: "21.5rem",
+          top: "20.5rem",
           position: "absolute",
         }}
       ></div>
@@ -140,7 +144,9 @@ const TravelAddress = () => {
           <></>
         )}
       </S.resHolder>
-      <S.nextButton onClick={handleNextButton}>다음으로</S.nextButton>
+      <BigButton size="long" handleButton={handleNextButton}>
+        다음으로
+      </BigButton>
     </Wrapper>
   );
 };
