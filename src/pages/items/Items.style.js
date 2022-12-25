@@ -33,9 +33,12 @@ export const WhoseToggleBox = styled.div`
   right: 0;
   margin: auto;
   border-radius: 1.5rem;
-  margin: 1.6rem auto 1rem auto;
-  padding: 0.2rem;
+  // margin: 1.6rem auto 1rem auto;
+  // padding: 0.2rem;
   background-color: white;
+  position: absolute;
+  top: 20.8rem;
+  // left: 6.2rem;
 `;
 
 export const WhoseToggleButton = styled.div`
@@ -336,7 +339,11 @@ export const buttonContainer = styled.div`
 `
 
 export const itemContainer = styled.div`
-  margin-top:-1.5rem;
+  // margin-top:-1.5rem;
   height: 60rem;
   overflow-y:scroll;
+  position: absolute;
+  top: 25.7rem;
+  // left: 3rem;
+
 `

@@ -6,57 +6,34 @@ import homeImage from "../../assets/images/homeicon.png";
 import levainImage from "../../assets/images/levainicon.png";
 import Home from "../home/Home";
 import Mypage from "../myPage/Mypage";
-// import axios from "axios";
+import * as G from "../../components/common/header/header.style"
 import add from "../../assets/images/add.png";
 import { useNavigate } from "react-router";
 
 const Main = () => {
   const [isHome, Toggle] = useState(true);
-  // const [categoryItem, setCategoryItem] = useState([]);
-  // const [experienceItem, setExperienceItem] = useState([]);
   const naviagte = useNavigate();
-  // const getHomeData = async () => {
-  //   const response = await axios({
-  //     method: "get",
-  //     url: process.env.REACT_APP_BACKEND_URL+"/api/users",
-  //     headers: {
-  //       authorization: localStorage.getItem("accesstoken"),
-  //     },
-  //   });
-  //   setCategoryItem(response.data.category_items);
-  //   setExperienceItem(response.data.experience_items);
-  //   console.log(response.data);
-  // };
-
-  // useEffect(() => {
-  //   getHomeData();
-  // }, []);
-  // console.log(categoryItem, experienceItem);
   return (
     <Wrapper>
       <S.headerWhiteBox></S.headerWhiteBox>
       <S.headerButton>
         <S.headerImg src={headerImage}></S.headerImg>
       </S.headerButton>
+      <G.firstLine>{localStorage.getItem("username")}님,</G.firstLine>
       {isHome ? (
+      <>
+        <G.secondLine>
+          제주에서 <G.Color>특별한 여정</G.Color>을 시작해보세요!
+        </G.secondLine>
+        <Home />
+      </>
+      ):(
         <>
-          <S.headerText>{localStorage.getItem("username")}님,</S.headerText>
-          <S.headerText2>
-            제주에서&nbsp;
-            <text style={{ color: "#78A484" }}>특별한 여정</text>을
-            &nbsp;시작해보세요!
-          </S.headerText2>
-          <Home />
-        </>
-      ) : (
-        <>
-          <S.headerText>{localStorage.getItem("username")}님,</S.headerText>
-          <S.headerText2>
-            <text style={{ color: "#78A484" }}>나의 주멍</text>
-            &nbsp;확인해보세요!
-          </S.headerText2>
-          <Mypage />
-        </>
+        <G.secondLine>
+          <G.Color>나의 주멍</G.Color> 확인해보세요!
+        </G.secondLine>
+        <Mypage />
+      </>
       )}
       <S.bottomNavContainer></S.bottomNavContainer>
       <S.logoButton>

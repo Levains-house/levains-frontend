@@ -43,12 +43,10 @@ const Start = () => {
             placeholder="카카오톡 오픈채팅방 URL을 입력해주세요"
             onChange={handleInputUrl}
           />
-      <S.ButtonBox>
-        <BigButton size="long" handleButton={handleButton}>
-          따뜻한 여정 시작하기
-        </BigButton>
-      </S.ButtonBox>
-        </S.InputBox>
+      </S.InputBox>
+      <BigButton size="long" handleButton={handleButton}>
+        따뜻한 여정 시작하기
+      </BigButton>
       </Wrapper>
     </>
   );

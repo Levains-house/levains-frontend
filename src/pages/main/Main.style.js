@@ -16,48 +16,6 @@ export const headerButton = styled.button`
   background: white;
   border: 5px;
 `;
-export const headerText = styled.a`
-  position: absolute;
-  left: 1.9rem;
-  top: 10rem;
-
-  /* Mediam/sub M 20px */
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.9rem;
-  /* identical to box height */
-
-  display: flex;
-  align-items: center;
-
-  /* gray scale/gray4 */
-
-  color: #3e404c;
-`;
-export const headerText2 = styled.a`
-  position: absolute;
-  left: 1.9rem;
-  top: 12.9rem;
-
-  /* Mediam/sub M 20px */
-
-  font-family: "Noto Sans KR";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 2rem;
-  line-height: 2.9rem;
-  /* identical to box height */
-
-  display: flex;
-  align-items: center;
-
-  /* gray scale/gray4 */
-
-  color: #3e404c;
-`;
 
 export const headerImg = styled.img`
   height: 1.481rem;
@@ -91,7 +49,7 @@ export const homeImg = styled.img`
 
 export const homeText = styled.a`
   position: absolute;
-  left: 6.7rem;
+  left: 7.0rem;
   bottom: 1.56rem;
 
   font-family: "Noto Sans";
@@ -129,7 +87,7 @@ export const levainImg = styled.img`
 
 export const levainText = styled.a`
   position: absolute;
-  right: 6rem;
+  right: 5.8rem;
   bottom: 1.7rem;
 
   font-family: "Noto Sans";

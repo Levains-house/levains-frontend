@@ -27,10 +27,10 @@ const BigButton = styled.button`
   position: absolute;
 
   // top: 80rem;
-  /* bottom: 0; */
-  left: 0;
+  bottom: 2.9rem;
+  left: 1.8rem;
   right: 0;
-  margin: auto;
+  // margin: auto;
 `;
 
 export { BigButton };
