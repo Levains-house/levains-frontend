@@ -6,7 +6,7 @@ import homeImage from "../../assets/images/homeicon.png";
 import levainImage from "../../assets/images/levainicon.png";
 import Home from "../home/Home";
 import Mypage from "../myPage/Mypage";
-// import axios from "axios";
+import * as G from "../../components/common/header/header.style"
 import add from "../../assets/images/add.png";
 import { useNavigate } from "react-router";
 
@@ -38,25 +38,21 @@ const Main = () => {
       <S.headerButton>
         <S.headerImg src={headerImage}></S.headerImg>
       </S.headerButton>
+      <G.firstLine>{localStorage.getItem("username")}님,</G.firstLine>
       {isHome ? (
+      <>
+        <G.secondLine>
+          제주에서 <G.Color>특별한 여정</G.Color>을 시작해보세요!
+        </G.secondLine>
+        <Home />
+      </>
+      ):(
         <>
-          <S.headerText>{localStorage.getItem("username")}님,</S.headerText>
-          <S.headerText2>
-            제주에서&nbsp;
-            <text style={{ color: "#78A484" }}>특별한 여정</text>을
-            &nbsp;시작해보세요!
-          </S.headerText2>
-          <Home />
-        </>
-      ) : (
-        <>
-          <S.headerText>{localStorage.getItem("username")}님,</S.headerText>
-          <S.headerText2>
-            <text style={{ color: "#78A484" }}>나의 주멍</text>
-            &nbsp;확인해보세요!
-          </S.headerText2>
-          <Mypage />
-        </>
+        <G.secondLine>
+          <G.Color>나의 주멍</G.Color> 확인해보세요!
+        </G.secondLine>
+        <Mypage />
+      </>
       )}
       <S.bottomNavContainer></S.bottomNavContainer>
       <S.logoButton>
